@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Hinoto — OGP画像生成</title>
+<style>
+  /* OGP/Twitterカード用: 1200 x 630px ちょうど。Playwrightで .card を等倍書き出し。 */
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{--ff:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","IPAGothic",
+        -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;}
+  body{font-family:var(--ff);background:#cfd3cb;display:flex;justify-content:center;padding:40px;}
+  .card{position:relative;flex:none;width:1200px;height:630px;overflow:hidden;
+    background:linear-gradient(135deg,#eef2ea,#f6f7f3);
+    display:flex;align-items:center;gap:58px;padding:0 92px;}
+  /* 画面表示は縮小。書き出し時は export-og.mjs が body.exporting を付けて原寸に戻す。 */
+  body:not(.exporting) .card{ zoom:.6; }
+  .card .blob{position:absolute;border-radius:50%;filter:blur(6px);}
+  .card .blob.a{width:760px;height:760px;top:-300px;right:-220px;
+    background:radial-gradient(circle at 50% 50%,rgba(224,138,43,.16),transparent 66%);}
+  .card .blob.b{width:720px;height:720px;bottom:-320px;left:-200px;
+    background:radial-gradient(circle at 50% 50%,rgba(124,102,216,.16),transparent 66%);}
+  .card .logo{width:236px;height:236px;border-radius:52px;flex:none;z-index:1;
+    box-shadow:0 24px 54px rgba(20,40,25,.16);}
+  .card .tx{z-index:1;}
+  .card .tx .name{font-size:108px;font-weight:800;letter-spacing:.01em;color:#234f3a;line-height:1;}
+  .card .tx .tag{font-size:56px;font-weight:700;color:#2f6b4f;margin-top:18px;line-height:1.2;}
+  .card .tx .sub{font-size:31px;font-weight:500;color:#5f6a59;margin-top:24px;line-height:1.5;}
+</style>
+</head>
+<body>
+  <section class="card">
+    <div class="blob a"></div><div class="blob b"></div>
+    <img class="logo" src="../assets/logo.png" alt="">
+    <div class="tx">
+      <div class="name">Hinoto</div>
+      <div class="tag">1日を、整える。</div>
+      <div class="sub">今日のタスクから、週・月のふりかえりまで。<br>仕事の段取りを手元で完結させるiOSアプリ。</div>
+    </div>
+  </section>
+</body>
+</html>
