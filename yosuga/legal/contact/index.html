@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ — Yosuga</title>
+  <meta name="description" content="Yosugaのお問い合わせ先です。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #2b2622;
+      --ink-soft: #5b524a;
+      --paper: #f6f2ea;
+      --paper-card: #fffdf8;
+      --rule: #e4dccd;
+      --accent: #7a6a55;
+      --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--serif);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.95;
+      font-feature-settings: "palt";
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+    header.page {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .brand {
+      font-size: 0.82rem;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+      margin: 0 0 14px;
+      text-indent: 0.4em;
+    }
+    h1 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 0;
+      letter-spacing: 0.08em;
+    }
+    .lead {
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      margin-top: 22px;
+    }
+    .rule {
+      width: 48px;
+      height: 1px;
+      background: var(--rule);
+      border: 0;
+      margin: 36px auto;
+    }
+    article {
+      background: var(--paper-card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 40px 36px;
+    }
+    h2 {
+      font-size: 1.12rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin: 40px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+    h2:first-of-type { margin-top: 0; }
+    p, li { font-size: 0.98rem; color: var(--ink); }
+    ul, ol { padding-left: 1.4em; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    .mail {
+      display: block;
+      text-align: center;
+      margin: 24px 0 8px;
+      padding: 18px 16px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      background: var(--paper);
+      font-size: 1.08rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--accent);
+    }
+    .mail:hover { background: #efe9dd; }
+    .meta {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+    .meta dt { float: left; width: 7.5em; color: var(--accent); }
+    .meta dd { margin: 0 0 8px; padding-left: 7.5em; }
+    footer.site {
+      margin-top: 44px;
+      text-align: center;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+    }
+    footer.site nav a { margin: 0 0.6em; white-space: nowrap; }
+    @media (max-width: 520px) {
+      .wrap { padding: 40px 18px 64px; }
+      article { padding: 28px 20px; }
+      .meta dt { float: none; width: auto; }
+      .meta dd { padding-left: 0; margin-bottom: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="page">
+      <p class="brand">YOSUGA</p>
+      <h1>お問い合わせ</h1>
+      <p class="lead">Yosugaについてのご質問、ご要望、不具合のご報告は、下記のメールアドレスまでお寄せください。</p>
+    </header>
+
+    <hr class="rule" />
+
+    <article>
+      <h2>メールでのお問い合わせ</h2>
+      <p>以下のアドレス宛にメールをお送りください。</p>
+      <a class="mail" href="mailto:support@rinro.jp?subject=Yosuga%20お問い合わせ">support@rinro.jp</a>
+
+      <h2>お問い合わせの際のお願い</h2>
+      <p>不具合のご報告など、状況の確認が必要な場合は、差し支えのない範囲で次の情報を添えていただけると、調査がスムーズになります。</p>
+      <ul>
+        <li>iOS のバージョン</li>
+        <li>ご利用の端末（例：iPhone の機種）</li>
+        <li>本アプリのバージョン</li>
+        <li>発生した事象と、その再現手順</li>
+      </ul>
+
+      <h2>返信について</h2>
+      <p>本アプリは個人で開発・運営しているため、お返事までにお時間をいただく場合があります。あらかじめご了承ください。いただいたお声は、本アプリをより良くするための大切な手がかりとして受けとめます。</p>
+
+      <dl class="meta">
+        <dt>最終更新日</dt>
+        <dd>2026年6月16日</dd>
+        <dt>運営者</dt>
+        <dd>Yosuga Developer</dd>
+        <dt>お問い合わせ</dt>
+        <dd><a href="mailto:support@rinro.jp">support@rinro.jp</a></dd>
+      </dl>
+    </article>
+
+    <footer class="site">
+      <nav>
+        <a href="../terms-of-service/">利用規約</a>・
+        <a href="../privacy-policy/">プライバシーポリシー</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
