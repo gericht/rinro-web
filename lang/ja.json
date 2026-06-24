@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "homeTitle": "RINRO | インディーアプリスタジオ",
+    "description": "RINROは、日常を静かに良くするシンプルなソフトウェアを丁寧に作るインディーアプリスタジオです。",
+    "privacyTitle": "プライバシーポリシー | RINRO"
+  },
+  "nav": {
+    "about": "About",
+    "apps": "Apps",
+    "news": "News",
+    "contact": "Contact",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "studio": "Indie App Studio",
+    "tagline": "Simple software, thoughtfully crafted.",
+    "aboutTitle": "Thoughtful software for everyday life.",
+    "aboutBody": "RINROは、日々の小さな不便を静かにほどくソフトウェアを作るインディーアプリスタジオです。必要なものを見極め、余計な複雑さを削ぎ落とし、長く気持ちよく使える体験を大切にしています。",
+    "appsTitle": "Applications",
+    "appsBody": "現在開発中および公開予定のアプリケーションを掲載します。詳細情報は今後追加予定です。",
+    "hinotoName": "Hinoto",
+    "hinotoDescription": "朝の計画、昼の集中、夜のしめくくりを1つの流れで支援。日報・振り返り・時間分析までを備えた、働く人のための新しい一日管理のアプリケーションです。",
+    "yosugaName": "Yosuga",
+    "yosugaDescription": "保存を「未来の自分との約束」に変え、その約束を守れるかたちにして返すアプリケーションです。",
+    "appPage": "App page",
+    "appStore": "App Store",
+    "newsTitle": "Latest News",
+    "newsBody": "リリース、アップデート、掲載情報など、RINROからのお知らせです。",
+    "contactTitle": "Contact",
+    "contactBody": "お問い合わせはメールまたはXからご連絡ください。"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: June 24, 2026",
+    "accessLogs": "アクセスログ",
+    "accessLogsBody": "本サイトでは、安定した運営とセキュリティのため、サーバーによりIPアドレス、ブラウザ情報、アクセス日時などのログが記録される場合があります。これらの情報は個人を特定する目的では使用しません。",
+    "cookies": "Cookie",
+    "cookiesBody": "本サイトでは、将来的に表示設定や解析のためCookieを使用する場合があります。現時点では、言語設定をブラウザのlocalStorageに保存します。",
+    "emails": "お問い合わせメール",
+    "emailsBody": "お問い合わせの際に取得したメールアドレスおよび内容は、返信と必要な対応のためにのみ使用します。",
+    "analytics": "アクセス解析",
+    "analyticsBody": "将来的にプライバシーに配慮したアクセス解析を導入する場合があります。その場合は本ポリシーに追記します。"
+  },
+  "article": {
+    "templateTitle": "Article Title",
+    "templateDate": "Publication date",
+    "templateBody": "This page is a reusable news article template. Duplicate it when creating release announcements, media coverage, or featured articles.",
+    "launchTitle": "RINRO公式サイトを公開しました",
+    "launchBody": "RINROの公式サイトを公開しました。今後、アプリケーションのリリース情報、アップデート、掲載情報などをこのサイトでお知らせします。",
+    "back": "Back to News"
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "body": "お探しのページは見つかりませんでした。URLをご確認いただくか、ホームにお戻りください。",
+    "home": "Back to Home"
+  },
+  "common": {
+    "readMore": "Read",
+    "copyright": "© 2026 RINRO. All rights reserved."
+  },
+  "news": {
+    "error": "ニュースを読み込めませんでした。"
+  }
+}

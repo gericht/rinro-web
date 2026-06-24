@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "homeTitle": "RINRO | Indie App Studio",
+    "description": "RINRO is an indie app studio crafting simple software that quietly improves everyday life.",
+    "privacyTitle": "Privacy Policy | RINRO"
+  },
+  "nav": {
+    "about": "About",
+    "apps": "Apps",
+    "news": "News",
+    "contact": "Contact",
+    "privacy": "Privacy"
+  },
+  "home": {
+    "studio": "Indie App Studio",
+    "tagline": "Simple software, thoughtfully crafted.",
+    "aboutTitle": "Thoughtful software for everyday life.",
+    "aboutBody": "RINRO is an indie app studio creating software that quietly removes small frictions from daily life. We focus on what is essential, reduce unnecessary complexity, and care for experiences that remain pleasant over time.",
+    "appsTitle": "Applications",
+    "appsBody": "A showcase for current and upcoming RINRO applications. Product details will be added as each app becomes ready.",
+    "hinotoName": "Hinoto",
+    "hinotoDescription": "A new daily management app for working people, supporting morning planning, midday focus, and evening wrap-up in one flow, with daily reports, reflection, and time analysis.",
+    "yosugaName": "Yosuga",
+    "yosugaDescription": "An application that turns saving into a promise with your future self, then returns it in a form you can keep.",
+    "appPage": "App page",
+    "appStore": "App Store",
+    "newsTitle": "Latest News",
+    "newsBody": "Release announcements, product updates, media coverage, and notes from RINRO.",
+    "contactTitle": "Contact",
+    "contactBody": "For inquiries, please reach us by email or through X."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: June 24, 2026",
+    "accessLogs": "Access Logs",
+    "accessLogsBody": "This website may record server logs such as IP address, browser information, and access time for stable operation and security. These logs are not used to identify individuals.",
+    "cookies": "Cookies",
+    "cookiesBody": "This website may use cookies in the future for preferences or analytics. At present, language preference is stored in the browser's localStorage.",
+    "emails": "Inquiry Emails",
+    "emailsBody": "Email addresses and message contents received through inquiries are used only for replies and necessary support.",
+    "analytics": "Analytics",
+    "analyticsBody": "Privacy-conscious analytics may be introduced in the future. If implemented, this policy will be updated accordingly."
+  },
+  "article": {
+    "templateTitle": "Article Title",
+    "templateDate": "Publication date",
+    "templateBody": "This page is a reusable news article template. Duplicate it when creating release announcements, media coverage, or featured articles.",
+    "launchTitle": "RINRO Website Launched",
+    "launchBody": "The official RINRO website has launched. Future release announcements, major updates, media coverage, and featured articles will be shared here.",
+    "back": "Back to News"
+  },
+  "notFound": {
+    "title": "Page not found.",
+    "body": "The page you are looking for could not be found. Please check the URL or return to the home page.",
+    "home": "Back to Home"
+  },
+  "common": {
+    "readMore": "Read",
+    "copyright": "© 2026 RINRO. All rights reserved."
+  },
+  "news": {
+    "error": "News could not be loaded."
+  }
+}
