@@ -52,7 +52,9 @@
     "pressnowTitle": "HinotoのプレスリリースがPRESSNOW プレスナウに掲載されました",
     "pressnowDescription": "iOSアプリ『Hinoto』のプレスリリースがPRESSNOW プレスナウに掲載されました。",
     "pressnowEyebrow": "Media Coverage",
-    "pressnowBody1": "RINROが提供するiOSアプリ『Hinoto』のプレスリリース「『タスク管理』ではなく『一日の整え方』を支援するiOSアプリ『Hinoto』をリリース」が、プレスリリースサイト、PRESSNOW プレスナウに掲載されました。",
+    "pressnowBody1Prefix": "RINROが提供するiOSアプリ『Hinoto』のプレスリリース「『タスク管理』ではなく『一日の整え方』を支援するiOSアプリ『Hinoto』をリリース」が、プレスリリースサイト、",
+    "pressnowSiteName": "PRESSNOW プレスナウ（https://pressnow.jp/）",
+    "pressnowBody1Suffix": "に掲載されました。",
     "pressnowBody2": "Hinotoは、朝の計画、昼の集中、夜の振り返りを一つの流れで支援する、一日管理アプリです。今後も、働く人が自分自身の時間と向き合い、一日をより心地よく過ごせるよう、継続的な機能改善と体験の向上に取り組んでまいります。",
     "pressnowLinkLabel": "PRESSNOW掲載ページ："
   },
