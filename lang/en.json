@@ -47,7 +47,14 @@
     "templateBody": "This page is a reusable news article template. Duplicate it when creating release announcements, media coverage, or featured articles.",
     "launchTitle": "RINRO Website Launched",
     "launchBody": "The official RINRO website has launched. Future release announcements, major updates, media coverage, and featured articles will be shared here.",
-    "back": "Back to News"
+    "back": "Back to News",
+    "pressnowTitleWithSite": "Hinoto press release featured on PRESSNOW | RINRO News",
+    "pressnowTitle": "Hinoto press release featured on PRESSNOW",
+    "pressnowDescription": "The press release for the iOS app Hinoto has been featured on PRESSNOW.",
+    "pressnowEyebrow": "Media Coverage",
+    "pressnowBody1": "A press release for Hinoto, the iOS app from RINRO, has been featured on the press release site PRESSNOW.",
+    "pressnowBody2": "Hinoto is a daily management app that supports morning planning, midday focus, and evening reflection in one continuous flow. We will continue improving the app so working people can better engage with their time and spend each day more comfortably.",
+    "pressnowLinkLabel": "PRESSNOW article: "
   },
   "notFound": {
     "title": "Page not found.",

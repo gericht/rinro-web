@@ -47,7 +47,14 @@
     "templateBody": "This page is a reusable news article template. Duplicate it when creating release announcements, media coverage, or featured articles.",
     "launchTitle": "RINRO公式サイトを公開しました",
     "launchBody": "RINROの公式サイトを公開しました。今後、アプリケーションのリリース情報、アップデート、掲載情報などをこのサイトでお知らせします。",
-    "back": "Back to News"
+    "back": "Back to News",
+    "pressnowTitleWithSite": "HinotoのプレスリリースがPRESSNOW プレスナウに掲載されました | RINRO News",
+    "pressnowTitle": "HinotoのプレスリリースがPRESSNOW プレスナウに掲載されました",
+    "pressnowDescription": "iOSアプリ『Hinoto』のプレスリリースがPRESSNOW プレスナウに掲載されました。",
+    "pressnowEyebrow": "Media Coverage",
+    "pressnowBody1": "RINROが提供するiOSアプリ『Hinoto』のプレスリリース「『タスク管理』ではなく『一日の整え方』を支援するiOSアプリ『Hinoto』をリリース」が、プレスリリースサイト、PRESSNOW プレスナウに掲載されました。",
+    "pressnowBody2": "Hinotoは、朝の計画、昼の集中、夜の振り返りを一つの流れで支援する、一日管理アプリです。今後も、働く人が自分自身の時間と向き合い、一日をより心地よく過ごせるよう、継続的な機能改善と体験の向上に取り組んでまいります。",
+    "pressnowLinkLabel": "PRESSNOW掲載ページ："
   },
   "notFound": {
     "title": "Page not found.",
