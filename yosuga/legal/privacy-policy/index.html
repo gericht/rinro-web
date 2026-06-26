@@ -81,6 +81,21 @@
     ul, ol { padding-left: 1.4em; }
     li { margin: 6px 0; }
     a { color: var(--accent); }
+    .product-return {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+      margin-bottom: 28px;
+      padding: 8px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: var(--paper-card);
+      color: var(--accent);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .product-return:hover { background: #efe9dd; }
     .meta {
       margin-top: 40px;
       padding-top: 20px;
@@ -107,6 +122,7 @@
 </head>
 <body>
   <div class="wrap">
+    <a class="product-return" href="../../">← Yosuga プロダクトページへ戻る</a>
     <header class="page">
       <p class="brand">YOSUGA</p>
       <h1>プライバシーポリシー</h1>
@@ -166,6 +182,7 @@
 
     <footer class="site">
       <nav>
+        <a href="../../">Yosuga プロダクトページ</a>・
         <a href="../terms-of-service/">利用規約</a>・
         <a href="../contact/">お問い合わせ</a>
       </nav>
