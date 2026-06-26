@@ -74,6 +74,16 @@
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .page-lang {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      z-index: 1;
+      color: var(--sub);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+    }
+    .page-lang a { color: var(--accent); }
 
     /* ───────────── ヒーロー ───────────── */
     header.hero {
@@ -387,6 +397,7 @@
   </style>
 </head>
 <body>
+  <nav class="page-lang" aria-label="Language">日本語 · <a href="index.en.html">English</a></nav>
   <div class="sky" aria-hidden="true"></div>
 
   <!-- ───── ヒーロー ───── -->
