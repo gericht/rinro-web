@@ -70,6 +70,16 @@
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .page-lang {
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      z-index: 1;
+      color: var(--sub);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+    }
+    .page-lang a { color: var(--accent); }
 
     /* ───────────── Hero ───────────── */
     header.hero {
@@ -373,6 +383,7 @@
   </style>
 </head>
 <body>
+  <nav class="page-lang" aria-label="Language">English · <a href="index.html">日本語</a></nav>
   <div class="sky" aria-hidden="true"></div>
 
   <!-- ───── Hero ───── -->
@@ -623,9 +634,9 @@
   <footer class="site">
     <p class="lang"><a href="index.html">日本語</a> · English</p>
     <nav>
-      <a href="legal/terms-of-service/">Terms of Service</a> ·
-      <a href="legal/privacy-policy/">Privacy Policy</a> ·
-      <a href="legal/contact/">Contact</a>
+      <a href="legal/terms-of-service/index.en.html" target="_blank" rel="noopener" aria-label="Open Terms of Service in a new tab">Terms of Service</a> ·
+      <a href="legal/privacy-policy/index.en.html" target="_blank" rel="noopener" aria-label="Open Privacy Policy in a new tab">Privacy Policy</a> ·
+      <a href="legal/contact/index.en.html" target="_blank" rel="noopener" aria-label="Open Contact in a new tab">Contact</a>
     </nav>
     <p class="copyright">© 2026 Yosuga — a foothold, for your future self</p>
   </footer>
