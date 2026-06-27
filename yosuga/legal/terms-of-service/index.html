@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>利用規約 — Yosuga</title>
+  <link rel="alternate" hreflang="ja" href="index.html" />
+  <link rel="alternate" hreflang="en" href="index.en.html" />
   <meta name="description" content="Yosugaの利用規約です。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -81,6 +83,29 @@
     ul, ol { padding-left: 1.4em; }
     li { margin: 6px 0; }
     a { color: var(--accent); }
+    .language-switch {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 18px;
+      color: var(--ink-soft);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+    }
+    .product-return {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35em;
+      margin-bottom: 28px;
+      padding: 8px 14px;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: var(--paper-card);
+      color: var(--accent);
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .product-return:hover { background: #efe9dd; }
     .meta {
       margin-top: 40px;
       padding-top: 20px;
@@ -107,6 +132,8 @@
 </head>
 <body>
   <div class="wrap">
+    <nav class="language-switch" aria-label="Language">日本語 · <a href="index.en.html">English</a></nav>
+    <a class="product-return" href="../../">← Yosuga プロダクトページへ戻る</a>
     <header class="page">
       <p class="brand">YOSUGA</p>
       <h1>利用規約</h1>
@@ -177,6 +204,7 @@
 
     <footer class="site">
       <nav>
+        <a href="../../">Yosuga プロダクトページ</a>・
         <a href="../privacy-policy/">プライバシーポリシー</a>・
         <a href="../contact/">お問い合わせ</a>
       </nav>
