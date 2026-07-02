@@ -31,15 +31,15 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "updated": "Last updated: June 24, 2026",
+    "updated": "Last updated: July 2, 2026",
     "accessLogs": "アクセスログ",
     "accessLogsBody": "本サイトでは、安定した運営とセキュリティのため、サーバーによりIPアドレス、ブラウザ情報、アクセス日時などのログが記録される場合があります。これらの情報は個人を特定する目的では使用しません。",
     "cookies": "Cookie",
-    "cookiesBody": "本サイトでは、将来的に表示設定や解析のためCookieを使用する場合があります。現時点では、言語設定をブラウザのlocalStorageに保存します。",
+    "cookiesBody": "本サイトでは、言語設定をブラウザのlocalStorageに保存します。アクセス解析にはCookieを使用しない仕組みを採用しています。",
     "emails": "お問い合わせメール",
     "emailsBody": "お問い合わせの際に取得したメールアドレスおよび内容は、返信と必要な対応のためにのみ使用します。",
     "analytics": "アクセス解析",
-    "analyticsBody": "将来的にプライバシーに配慮したアクセス解析を導入する場合があります。その場合は本ポリシーに追記します。"
+    "analyticsBody": "本サイトでは、プライバシーに配慮したアクセス解析として Cloudflare Web Analytics を使用します。この解析はCookieを使用せず、個人を特定する情報の収集や他サイトをまたいだ行動追跡は行いません。ページの表示回数や参照元などの統計情報のみを、サイト改善の目的で利用します。"
   },
   "article": {
     "templateTitle": "Article Title",

@@ -31,15 +31,15 @@
   },
   "privacy": {
     "title": "Privacy Policy",
-    "updated": "Last updated: June 24, 2026",
+    "updated": "Last updated: July 2, 2026",
     "accessLogs": "Access Logs",
     "accessLogsBody": "This website may record server logs such as IP address, browser information, and access time for stable operation and security. These logs are not used to identify individuals.",
     "cookies": "Cookies",
-    "cookiesBody": "This website may use cookies in the future for preferences or analytics. At present, language preference is stored in the browser's localStorage.",
+    "cookiesBody": "This website stores your language preference in the browser's localStorage. The analytics we use does not rely on cookies.",
     "emails": "Inquiry Emails",
     "emailsBody": "Email addresses and message contents received through inquiries are used only for replies and necessary support.",
     "analytics": "Analytics",
-    "analyticsBody": "Privacy-conscious analytics may be introduced in the future. If implemented, this policy will be updated accordingly."
+    "analyticsBody": "This website uses Cloudflare Web Analytics as a privacy-conscious analytics tool. It does not use cookies, does not collect personally identifiable information, and does not track behaviour across other websites. Only aggregate statistics such as page views and referrers are used to improve the site."
   },
   "article": {
     "templateTitle": "Article Title",
