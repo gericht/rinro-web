@@ -16,10 +16,10 @@
 (function () {
   "use strict";
 
-  var CF_BEACON_TOKEN = "__CF_BEACON_TOKEN__"; // ← Cloudflare のトークンに置き換える
+  var CF_BEACON_TOKEN = "01d2b4cb6c2a44a09e821078329a3b16"; // ← Cloudflare のトークンに置き換える
 
   // 未設定（プレースホルダのまま）なら何も読み込まない
-  if (!CF_BEACON_TOKEN || CF_BEACON_TOKEN === "__CF_BEACON_TOKEN__") return;
+  if (!CF_BEACON_TOKEN || CF_BEACON_TOKEN === "01d2b4cb6c2a44a09e821078329a3b16") return;
 
   var beacon = document.createElement("script");
   beacon.defer = true;
