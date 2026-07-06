@@ -233,11 +233,13 @@
   @media(max-width:840px){.herostack .device.back{display:none;}}
 
   /* ================= motion（section 8 / prefers-reduced-motion 対応） ================= */
-  .btn{transition:transform .12s ease, background .15s ease, border-color .15s ease;}
-  .btn.primary:hover,.btn.white:hover,.bar nav .cta:hover{transform:translateY(-1px);}
-  .btn:active{transform:scale(.98);}
+  .btn{transition:background .15s ease, border-color .15s ease;}
   a:focus-visible,.btn:focus-visible,summary:focus-visible,.bar nav a:focus-visible,details:focus-within summary{outline:2px solid var(--green);outline-offset:3px;border-radius:6px;}
   @media (prefers-reduced-motion: no-preference){
+    /* CTAのhover/tapの動きも reduce では無効化する */
+    .btn{transition:transform .12s ease, background .15s ease, border-color .15s ease;}
+    .btn.primary:hover,.btn.white:hover,.bar nav .cta:hover{transform:translateY(-1px);}
+    .btn:active{transform:scale(.98);}
     /* スクロールで一度だけフェードアップ（reveal-ready はJSが付与。JS不発時は常に表示） */
     html.reveal-ready :is(.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box){opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
     html.reveal-ready .is-in{opacity:1 !important;transform:none !important;}
