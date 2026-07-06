@@ -179,6 +179,47 @@
   .tlinks{text-align:center;margin-top:22px;font-size:14px;color:var(--sub);}
   .tlinks a{color:var(--green);}
 
+  /* estimate（見積/実績） */
+  .estimate .est-wrap{display:grid;grid-template-columns:1fr minmax(300px,410px);gap:52px;align-items:center;}
+  .estimate .etxt h2{font-size:clamp(24px,3.4vw,32px);font-weight:800;line-height:1.3;margin:10px 0 14px;}
+  .estimate .etxt p{color:var(--sub);font-size:16px;}
+  .estimate .etxt ul{list-style:none;margin:20px 0 0;display:flex;flex-direction:column;gap:11px;}
+  .estimate .etxt ul li{position:relative;padding-left:28px;color:var(--ink);font-size:15px;}
+  .estimate .etxt ul li::before{content:"";position:absolute;left:0;top:9px;width:15px;height:9px;border-left:2.4px solid var(--green);border-bottom:2.4px solid var(--green);transform:rotate(-45deg);}
+  .estviz{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 24px;box-shadow:0 14px 34px rgba(31,41,51,.06);}
+  .estviz .eh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px;}
+  .estviz .eh b{font-size:15px;font-weight:800;}
+  .estviz .eh .sub{font-size:12px;color:var(--sub);}
+  .est-row{margin-bottom:18px;}
+  .est-row:last-of-type{margin-bottom:0;}
+  .est-row .name{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;font-weight:700;margin-bottom:8px;}
+  .est-row .delta{font-size:12px;font-weight:800;}
+  .est-row .delta.over{color:var(--orange);}
+  .est-row .delta.under{color:var(--green2);}
+  .bar{position:relative;height:8px;border-radius:999px;background:#eef0ea;margin-bottom:6px;overflow:hidden;}
+  .bar:last-child{margin-bottom:0;}
+  .bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:999px;display:block;}
+  .bar.est>i{background:#c7d0c0;}
+  .bar.act>i{background:var(--green);}
+  .bar.act.over>i{background:var(--orange);}
+  .est-legend{display:flex;gap:18px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
+  .est-legend span{display:inline-flex;align-items:center;gap:6px;}
+  .est-legend i{width:11px;height:11px;border-radius:3px;display:inline-block;}
+  @media(max-width:840px){.estimate .est-wrap{grid-template-columns:1fr;text-align:center;}
+    .estimate .etxt ul{align-items:flex-start;display:inline-flex;text-align:left;margin-inline:auto;}
+    .estviz{text-align:left;}}
+
+  /* use cases（利用シーン） */
+  .usecases{background:var(--hero);}
+  .ucgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px;}
+  .uc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;}
+  .uc .role{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--green2);}
+  .uc .role .ic{font-size:16px;}
+  .uc h3{font-size:16.5px;font-weight:800;margin:10px 0 8px;}
+  .uc p{color:var(--sub);font-size:14px;line-height:1.65;}
+  @media(max-width:1000px){.ucgrid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.ucgrid{grid-template-columns:1fr;}}
+
   /* mobile sticky cta */
   .stickycta{display:none;}
   @media(max-width:640px){
@@ -241,10 +282,11 @@
     .btn.primary:hover,.btn.white:hover,.bar nav .cta:hover{transform:translateY(-1px);}
     .btn:active{transform:scale(.98);}
     /* スクロールで一度だけフェードアップ（reveal-ready はJSが付与。JS不発時は常に表示） */
-    html.reveal-ready :is(.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box){opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+    html.reveal-ready :is(.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.estimate .etxt,.estviz,.ucgrid .uc,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box){opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
     html.reveal-ready .is-in{opacity:1 !important;transform:none !important;}
-    html.reveal-ready .steps .step:nth-child(2),html.reveal-ready .grid3 .mini:nth-child(2),html.reveal-ready .plans .plan:nth-child(2){transition-delay:.07s;}
-    html.reveal-ready .steps .step:nth-child(3),html.reveal-ready .grid3 .mini:nth-child(3){transition-delay:.14s;}
+    html.reveal-ready .steps .step:nth-child(2),html.reveal-ready .grid3 .mini:nth-child(2),html.reveal-ready .plans .plan:nth-child(2),html.reveal-ready .ucgrid .uc:nth-child(2){transition-delay:.07s;}
+    html.reveal-ready .steps .step:nth-child(3),html.reveal-ready .grid3 .mini:nth-child(3),html.reveal-ready .ucgrid .uc:nth-child(3){transition-delay:.14s;}
+    html.reveal-ready .ucgrid .uc:nth-child(4){transition-delay:.21s;}
     /* ファーストビューは読み込み時に一度だけ */
     html.js-motion .hero .eyebrow{animation:hUp .5s ease .00s both;}
     html.js-motion .hero h1{animation:hUp .5s ease .05s both;}
@@ -448,6 +490,33 @@
   </div>
 </section>
 
+<!-- ============ EXTRAS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">さらに</span>
+      <h2>毎日を支える、細やかな機能</h2>
+    </div>
+    <div class="grid3">
+      <div class="mini">
+        <div class="ic">⏱</div>
+        <h4>ウィジェット・ライブアクティビティ</h4>
+        <p>作業中のタスクはホーム画面ウィジェットとライブアクティビティに表示。アプリを開かなくても、経過時間がひと目でわかります。</p>
+      </div>
+      <div class="mini">
+        <div class="ic">▤</div>
+        <h4>チャンネルで色分け</h4>
+        <p>仕事・経理・プライベートなど、チャンネルごとにタスクを色分け。複数の案件が混ざっても、種類を見分けやすくなります。</p>
+      </div>
+      <div class="mini">
+        <div class="ic">▦</div>
+        <h4>タイムブロック</h4>
+        <p>見積もり時間を、そのまま1日の予定に割り付け。今日の作業量が現実的かを、時間の帯で確認できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ REPORT (日報・報連相) ============ -->
 <section id="report" class="report">
   <div class="wrap">
@@ -471,28 +540,71 @@
   </div>
 </section>
 
-<!-- ============ EXTRAS ============ -->
-<section>
+<!-- ============ ESTIMATE (見積/実績) ============ -->
+<section id="estimate" class="estimate">
+  <div class="wrap est-wrap">
+    <div class="etxt">
+      <span class="eyebrow">見積 / 実績</span>
+      <h2>見積もりのズレが、次の計画を変える。</h2>
+      <p>タスクごとに、見積もった時間と実際にかかった時間を並べて記録。「思ったより時間がかかる作業」が見えてくると、翌日の見積もりが少しずつ現実的になります。</p>
+      <ul>
+        <li>見積時間と実績時間を、タスク単位で記録</li>
+        <li>フォーカスタイマーで、実績は自動で残る</li>
+        <li>月次では見積と実績の推移をグラフで振り返る（Pro）</li>
+      </ul>
+    </div>
+    <div class="estviz" aria-hidden="true">
+      <div class="eh"><b>見積 vs 実績</b><span class="sub">今日</span></div>
+      <div class="est-row">
+        <div class="name">企画書の作成 <span class="delta over">+25分</span></div>
+        <div class="bar est"><i style="width:83%"></i></div>
+        <div class="bar act over"><i style="width:100%"></i></div>
+      </div>
+      <div class="est-row">
+        <div class="name">取引先との打ち合わせ <span class="delta under">−10分</span></div>
+        <div class="bar est"><i style="width:41%"></i></div>
+        <div class="bar act"><i style="width:34%"></i></div>
+      </div>
+      <div class="est-row">
+        <div class="name">資料レビュー <span class="delta over">+10分</span></div>
+        <div class="bar est"><i style="width:21%"></i></div>
+        <div class="bar act over"><i style="width:28%"></i></div>
+      </div>
+      <div class="est-legend">
+        <span><i style="background:#c7d0c0"></i>見積</span>
+        <span><i style="background:#2f6b4f"></i>実績</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USE CASES (利用シーン) ============ -->
+<section id="usecases" class="usecases">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">さらに</span>
-      <h2>毎日を支える、細やかな機能</h2>
+      <span class="eyebrow">利用シーン</span>
+      <h2>こんな働き方に、Hinotoは合います。</h2>
     </div>
-    <div class="grid3">
-      <div class="mini">
-        <div class="ic">⏱</div>
-        <h4>ウィジェット・ライブアクティビティ</h4>
-        <p>作業中のタスクはホーム画面ウィジェットとライブアクティビティに表示。アプリを開かなくても、経過時間がひと目でわかります。</p>
+    <div class="ucgrid">
+      <div class="uc">
+        <span class="role"><span class="ic">⌨</span>システムエンジニア</span>
+        <h3>細かい作業を、整理する</h3>
+        <p>実装、レビュー、調査、問い合わせ対応。細かく分かれる作業を、見積もりと実績つきで整理できます。</p>
       </div>
-      <div class="mini">
-        <div class="ic">▤</div>
-        <h4>チャンネルで色分け</h4>
-        <p>仕事・経理・プライベートなど、チャンネルごとにタスクを色分け。複数の案件が混ざっても、種類を見分けやすくなります。</p>
+      <div class="uc">
+        <span class="role"><span class="ic">☰</span>SES・受託開発者</span>
+        <h3>日報・作業報告に</h3>
+        <p>日報や作業報告が必要な毎日に。完了タスクと共有事項を、終業時にまとめやすくなります。</p>
       </div>
-      <div class="mini">
-        <div class="ic">▦</div>
-        <h4>タイムブロック</h4>
-        <p>見積もり時間を、そのまま1日の予定に割り付け。今日の作業量が現実的かを、時間の帯で確認できます。</p>
+      <div class="uc">
+        <span class="role"><span class="ic">⌂</span>リモートワーカー</span>
+        <h3>自分で作業量を管理する</h3>
+        <p>自分で作業量を管理する日々に。今日やること、進捗、相談事項を手元で整理できます。</p>
+      </div>
+      <div class="uc">
+        <span class="role"><span class="ic">◇</span>フリーランス</span>
+        <h3>複数案件のログを残す</h3>
+        <p>複数案件の作業ログを残したいときに。チャンネル分類で、仕事の種類を分けて管理できます。</p>
       </div>
     </div>
   </div>
@@ -653,7 +765,7 @@
 (function(){
   try{
     if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var sel = '.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box';
+    var sel = '.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.estimate .etxt,.estviz,.ucgrid .uc,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box';
     var els = [].slice.call(document.querySelectorAll(sel));
     if(!els.length) return;
     document.documentElement.classList.add('reveal-ready');
