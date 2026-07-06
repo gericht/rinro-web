@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Carry over the language chosen on the RINRO site (shared localStorage key).
+    (function () {
+      try {
+        if (localStorage.getItem("rinro-language") === "ja") {
+          window.location.replace("index.html");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="color-scheme" content="light" />
   <title>Yosuga — Saving is a promise to your future self.</title>
   <meta name="description" content="Yosuga is an iOS app that turns saving into a promise to your future self. What you entrust comes back to you when the time is right. You can forget. Yosuga remembers." />
@@ -385,7 +395,7 @@
   <script defer src="../assets/analytics.js"></script>
 </head>
 <body>
-  <nav class="page-lang" aria-label="Language"><a href="index.html">日本語</a> · English</nav>
+  <nav class="page-lang" aria-label="Language"><a href="index.html" onclick="try{localStorage.setItem('rinro-language','ja')}catch(e){}">日本語</a> · English</nav>
   <div class="sky" aria-hidden="true"></div>
 
   <!-- ───── Hero ───── -->
@@ -635,7 +645,7 @@
 
   <!-- ───── Footer ───── -->
   <footer class="site">
-    <p class="lang"><a href="index.html">日本語</a> · English</p>
+    <p class="lang"><a href="index.html" onclick="try{localStorage.setItem('rinro-language','ja')}catch(e){}">日本語</a> · English</p>
     <nav>
       <a href="legal/terms-of-service/index.en.html" target="_blank" rel="noopener" aria-label="Open Terms of Service in a new tab">Terms of Service</a> ·
       <a href="legal/privacy-policy/index.en.html" target="_blank" rel="noopener" aria-label="Open Privacy Policy in a new tab">Privacy Policy</a> ·
