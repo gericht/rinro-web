@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hinoto — 1日を整えるアプリ</title>
-<meta name="description" content="Hinotoは、今日のタスク管理・タイムブロック・週次ゴール・月次テーマ・1日を締めるしめくくり振り返りまでを手元で完結させるiOSアプリ。報連相のコピー、フォーカスタイマー、iCloud同期に対応。">
+<title>Hinoto — 日報まで整うタスク管理アプリ</title>
+<meta name="description" content="Hinotoは、今日のタスク、見積時間、実績記録、報連相、振り返りをひとつにつなげるiPhone向けタスク管理アプリ。朝に予定を立て、作業時間を記録し、終業時には日報・報連相まで整います。基本機能は無料。">
 <meta name="theme-color" content="#2f6b4f">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hinoto — 1日を整えるアプリ">
-<meta property="og:description" content="今日のタスクから週・月のゴール、1日を締める振り返りまで。仕事の段取りを手元で完結させるiOSアプリ。">
+<meta property="og:title" content="Hinoto — 日報まで整うタスク管理アプリ">
+<meta property="og:description" content="朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。今日のタスク・実績・振り返りをひとつにつなげるiPhone向けタスク管理アプリ。">
 <meta property="og:url" content="https://rinro.jp/hinoto/">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://rinro.jp/hinoto/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hinoto — 1日を、整える">
+<meta property="og:image:alt" content="Hinoto — 今日の仕事を、日報まで整える">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hinoto — 1日を整えるアプリ">
-<meta name="twitter:description" content="今日のタスクから週・月のゴール、1日を締める振り返りまで。仕事の段取りを手元で完結させるiOSアプリ。">
+<meta name="twitter:title" content="Hinoto — 日報まで整うタスク管理アプリ">
+<meta name="twitter:description" content="朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。今日のタスク・実績・振り返りをひとつにつなげるiPhone向けタスク管理アプリ。">
 <meta name="twitter:image" content="https://rinro.jp/hinoto/assets/og-image.png">
 <style>
   /* 本体アプリはライト固定（UIUserInterfaceStyle: Light / preferredColorScheme(.light)）。
@@ -65,9 +65,14 @@
   .btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);}
   .btn.ghost:hover{text-decoration:none;border-color:var(--green);}
   .hero .note{font-size:13px;color:var(--sub);margin-top:14px;}
-  .hero .shot{display:flex;justify-content:center;}
+  .hero .shot{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .hero .heroTags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;}
+  .hero .heroTags span{font-size:12px;font-weight:700;color:var(--green2);background:rgba(47,107,79,.08);border:1px solid var(--line);padding:5px 12px;border-radius:999px;}
   @media(max-width:840px){.hero .wrap{grid-template-columns:1fr;text-align:center;}
     .hero p.lead{margin-left:auto;margin-right:auto;} .hero .actions{justify-content:center;} .hero .shot{margin-top:8px;}}
+
+  /* screenshot caption (意味づけラベル) */
+  .shot .cap{font-size:13.5px;font-weight:700;color:var(--sub);margin-top:16px;text-align:center;max-width:22em;}
 
   /* ===== section ===== */
   section{padding:62px 0;}
@@ -79,7 +84,7 @@
   .feature{display:grid;grid-template-columns:1fr minmax(280px,330px);gap:52px;align-items:center;padding:46px 0;border-top:1px solid var(--line);}
   .feature:nth-child(even){grid-template-columns:minmax(280px,330px) 1fr;}
   .feature:nth-child(even) .ftxt{order:2;}
-  .feature .shot{display:flex;justify-content:center;}
+  .feature .shot{display:flex;flex-direction:column;align-items:center;justify-content:center;}
   .feature h3{font-size:25px;font-weight:800;margin:10px 0 12px;}
   .feature p{color:var(--sub);font-size:16px;}
   .feature ul{list-style:none;margin:18px 0 0;display:flex;flex-direction:column;gap:11px;}
@@ -110,6 +115,23 @@
   .mini h4{font-size:17px;font-weight:800;margin:12px 0 7px;}
   .mini p{color:var(--sub);font-size:14.5px;}
   @media(max-width:760px){.grid3{grid-template-columns:1fr;}}
+
+  /* problem section */
+  .problem{background:var(--hero);}
+  .problem .lead{color:var(--sub);font-size:16px;max-width:40em;margin:16px auto 0;text-align:center;}
+  .probs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+  .prob{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:15px;font-weight:700;color:var(--ink);}
+  .prob .x{flex:none;display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:rgba(224,138,43,.14);color:var(--orange);font-weight:800;font-size:15px;}
+  @media(max-width:760px){.probs{grid-template-columns:1fr;}}
+
+  /* faq */
+  .faq details{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 20px;margin-bottom:12px;}
+  .faq summary{list-style:none;cursor:pointer;padding:18px 34px 18px 0;font-size:16px;font-weight:800;color:var(--ink);position:relative;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";position:absolute;right:2px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:700;color:var(--green2);line-height:1;}
+  .faq details[open] summary::after{content:"–";}
+  .faq details[open] summary{border-bottom:1px solid var(--line);}
+  .faq .ans{color:var(--sub);font-size:15px;padding:14px 0 20px;}
 
   /* pricing */
   .price{background:var(--hero);}
@@ -165,17 +187,37 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow">iPhone タスク管理</span>
-      <h1>1日を、<span class="accent">整える</span>。<br>段取りから振り返りまで。</h1>
-      <p class="lead">今日やることを並べ、時間を見積もり、終わったら振り返る。Hinotoは、タスク管理・タイムブロック・週/月のゴール・1日を締めるしめくくりまでを、ひとつの手元のリズムにまとめるiOSアプリです。</p>
+      <span class="eyebrow">日報・報連相に強いタスク管理アプリ</span>
+      <h1>今日の仕事を、<br><span class="accent">日報まで整える</span>。</h1>
+      <p class="lead">朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。Hinotoは、日々のタスク・実績・振り返りをひとつにつなげるiPhone向けタスク管理アプリです。</p>
       <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">App Store で入手</a>
+        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">無料で今日の段取りを作る</a>
         <a class="btn ghost" href="#features">機能を見る</a>
       </div>
       <p class="note">iOS 17以降 ・ 基本機能は無料 ・ iCloud同期対応</p>
     </div>
     <div class="shot">
       <div class="device"><img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。タスク一覧、進捗、フォーカスタイマー、報連相タグを表示。" fetchpriority="high"></div>
+      <div class="heroTags"><span>見積もる</span><span>記録する</span><span>日報にする</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">こんな毎日</span>
+      <h2>日報を書くために、1日を思い出していませんか？</h2>
+    </div>
+    <p class="lead">朝はタスクを並べたはずなのに、割り込みや見積もり違いで予定が崩れる。終業時には「今日、何をどこまでやったか」を思い出しながら日報を書く。相談すべきことも、あとで共有しようと思ったまま抜けてしまう。Hinotoは、そんな毎日の小さな負担を、タスク管理の中で自然に減らします。</p>
+    <div class="probs">
+      <div class="prob"><span class="x">!</span>今日やることが多すぎる</div>
+      <div class="prob"><span class="x">!</span>見積もりと実績がズレる</div>
+      <div class="prob"><span class="x">!</span>作業時間が残らない</div>
+      <div class="prob"><span class="x">!</span>日報を書くのが面倒</div>
+      <div class="prob"><span class="x">!</span>報連相を忘れる</div>
+      <div class="prob"><span class="x">!</span>未完了タスクが散らかる</div>
     </div>
   </div>
 </section>
@@ -204,6 +246,7 @@
       </div>
       <div class="shot">
         <div class="device"><img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。チャンネル色分け、見積もり時間、報連相タグ、フォーカスタイマーを表示。" loading="lazy"></div>
+        <p class="cap">朝、今日できる量を見積もる</p>
       </div>
     </div>
 
@@ -221,6 +264,7 @@
       </div>
       <div class="shot">
         <div class="device"><img src="assets/week.png" width="1320" height="2868" alt="Hinoto『今週』の画面。日別の完了率リング、今週のゴール3つ、週の振り返りを表示。" loading="lazy"></div>
+        <p class="cap">今週やり切ることを3つに絞る</p>
       </div>
     </div>
 
@@ -238,6 +282,7 @@
       </div>
       <div class="shot">
         <div class="device"><img src="assets/month.png" width="1320" height="2868" alt="Hinoto『今月』の画面。今月のテーマ、達成カレンダーのヒートマップ、完了率の推移グラフを表示。" loading="lazy"></div>
+        <p class="cap">見積と実績の傾向を振り返る</p>
       </div>
     </div>
 
@@ -254,6 +299,7 @@
       </div>
       <div class="shot">
         <div class="device"><img src="assets/shutdown-04.png" width="1320" height="2868" alt="Hinoto『しめくくり』の画面。今日の振り返りの記入と、日報の共有を表示。" loading="lazy"></div>
+        <p class="cap">完了・未完了・所感を、日報にまとめる</p>
       </div>
     </div>
 
@@ -338,6 +384,40 @@
       <div class="prow"><span class="feat">報連相サマリーのコピー</span><span class="col mark-no">—</span><span class="col pro">✓</span></div>
     </div>
     <p class="priceline">Pro は <b>月額サブスク・年額サブスク・買い切り</b>から選べます。どのプランでも利用できるPro機能は同じです。</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある質問</h2>
+    </div>
+    <details>
+      <summary>無料でどこまで使えますか？</summary>
+      <p class="ans">今日のタスク管理、見積もり、実績記録など、基本的な日次管理は無料で始められます。週次・月次の振り返りや詳細な分析、報連相サマリーのコピーを使いたい場合はProを検討できます。</p>
+    </details>
+    <details>
+      <summary>普通のToDoアプリと何が違いますか？</summary>
+      <p class="ans">Hinotoは、タスクを完了するだけでなく、見積時間、実績時間、報連相、日報、振り返りまでを1日の流れで扱える点が違います。予定・実績・日報が別々のツールに分断されません。</p>
+    </details>
+    <details>
+      <summary>日報は自動で作れますか？</summary>
+      <p class="ans">完了タスク、未完了タスク、報連相、所感をもとに、共有しやすい形へ整理できます。最終的な内容は自分で確認・編集できます。</p>
+    </details>
+    <details>
+      <summary>入力が面倒になりませんか？</summary>
+      <p class="ans">毎日使う中心は「今日」の画面です。まずはタスクと見積もりを入れ、作業時にタイマーを使うだけでも効果を感じやすい設計です。複雑な設定は必要ありません。</p>
+    </details>
+    <details>
+      <summary>iPadでも使えますか？</summary>
+      <p class="ans">iPhone向けに設計されたアプリです。iCloud同期に対応しているため、機種変更後も同じデータを引き継げます。</p>
+    </details>
+    <details>
+      <summary>データは安全ですか？</summary>
+      <p class="ans">タスクも振り返りも自分のiCloudに保存されます。詳しい取り扱いはプライバシーポリシーで確認できます。</p>
+    </details>
   </div>
 </section>
 
