@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hinoto — 日報まで整うタスク管理アプリ</title>
-<meta name="description" content="Hinotoは、今日のタスク、見積時間、実績記録、報連相、振り返りをひとつにつなげるiPhone/iPad向けタスク管理アプリ。朝に予定を立て、作業時間を記録し、終業時には日報・報連相まで整います。基本機能は無料。">
+<script>document.documentElement.classList.add('js-motion');</script>
+<title>Hinoto｜日報まで整うタスク管理アプリ</title>
+<meta name="description" content="Hinotoは、今日のタスク、見積時間、実績記録、報連相、振り返りを一つにつなげるiPhone/iPad向けタスク管理アプリです。基本機能は無料で始められます。">
 <meta name="theme-color" content="#2f6b4f">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hinoto — 日報まで整うタスク管理アプリ">
+<meta property="og:title" content="Hinoto｜日報まで整うタスク管理アプリ">
 <meta property="og:description" content="朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。今日のタスク・実績・振り返りをひとつにつなげるiPhone/iPad向けタスク管理アプリ。">
 <meta property="og:url" content="https://rinro.jp/hinoto/">
 <meta property="og:locale" content="ja_JP">
@@ -18,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Hinoto — 今日の仕事を、日報まで整える">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hinoto — 日報まで整うタスク管理アプリ">
+<meta name="twitter:title" content="Hinoto｜日報まで整うタスク管理アプリ">
 <meta name="twitter:description" content="朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。今日のタスク・実績・振り返りをひとつにつなげるiPhone/iPad向けタスク管理アプリ。">
 <meta name="twitter:image" content="https://rinro.jp/hinoto/assets/og-image.png">
 <style>
@@ -117,7 +118,6 @@
   @media(max-width:760px){.grid3{grid-template-columns:1fr;}}
 
   /* problem section */
-  .problem{background:var(--hero);}
   .problem .lead{color:var(--sub);font-size:16px;max-width:40em;margin:16px auto 0;text-align:center;}
   .probs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
   .prob{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:15px;font-weight:700;color:var(--ink);}
@@ -212,6 +212,7 @@
   .final p{opacity:.92;max-width:34em;margin:0 auto 26px;font-size:16px;}
   .final .btn.white{background:#fff;color:var(--greenD);}
   .final .btn.white:hover{text-decoration:none;background:#f0efe9;}
+  .final .fine{opacity:.82;font-size:13px;margin:16px auto 0;}
 
   /* footer */
   footer.site{padding:46px 0 60px;border-top:1px solid var(--line);}
@@ -223,6 +224,40 @@
   /* ================= device frame (実機スクリーンショット) ================= */
   .device{width:290px;max-width:80vw;padding:9px;background:#15171a;border-radius:46px;box-shadow:0 22px 50px rgba(0,0,0,.22);flex:none;}
   .device img{display:block;width:100%;height:auto;border-radius:38px;}
+
+  /* hero: 今日画面（手前）＋しめくくり画面（右奥） */
+  .herostack{position:relative;display:inline-flex;}
+  .herostack .device.front{position:relative;z-index:2;}
+  .herostack .device.back{position:absolute;z-index:1;right:-44px;top:38px;width:158px;padding:6px;border-radius:32px;box-shadow:0 16px 38px rgba(0,0,0,.20);}
+  .herostack .device.back img{border-radius:26px;}
+  @media(max-width:840px){.herostack .device.back{display:none;}}
+
+  /* ================= motion（section 8 / prefers-reduced-motion 対応） ================= */
+  .btn{transition:transform .12s ease, background .15s ease, border-color .15s ease;}
+  .btn.primary:hover,.btn.white:hover,.bar nav .cta:hover{transform:translateY(-1px);}
+  .btn:active{transform:scale(.98);}
+  a:focus-visible,.btn:focus-visible,summary:focus-visible,.bar nav a:focus-visible,details:focus-within summary{outline:2px solid var(--green);outline-offset:3px;border-radius:6px;}
+  @media (prefers-reduced-motion: no-preference){
+    /* スクロールで一度だけフェードアップ（reveal-ready はJSが付与。JS不発時は常に表示） */
+    html.reveal-ready :is(.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box){opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+    html.reveal-ready .is-in{opacity:1 !important;transform:none !important;}
+    html.reveal-ready .steps .step:nth-child(2),html.reveal-ready .grid3 .mini:nth-child(2),html.reveal-ready .plans .plan:nth-child(2){transition-delay:.07s;}
+    html.reveal-ready .steps .step:nth-child(3),html.reveal-ready .grid3 .mini:nth-child(3){transition-delay:.14s;}
+    /* ファーストビューは読み込み時に一度だけ */
+    html.js-motion .hero .eyebrow{animation:hUp .5s ease .00s both;}
+    html.js-motion .hero h1{animation:hUp .5s ease .05s both;}
+    html.js-motion .hero .lead{animation:hUp .5s ease .12s both;}
+    html.js-motion .hero .actions{animation:hUp .5s ease .18s both;}
+    html.js-motion .hero .note{animation:hUp .5s ease .24s both;}
+    html.js-motion .hero .shot{animation:hShot .6s ease .16s both;}
+    html.js-motion .heroTags span{opacity:0;animation:hTag .45s ease both;}
+    html.js-motion .heroTags span:nth-child(1){animation-delay:.42s;}
+    html.js-motion .heroTags span:nth-child(2){animation-delay:.54s;}
+    html.js-motion .heroTags span:nth-child(3){animation-delay:.66s;}
+    @keyframes hUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+    @keyframes hShot{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+    @keyframes hTag{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  }
 
   .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
 </style>
@@ -239,7 +274,7 @@
       <a class="lnk" href="#compare">比較</a>
       <a class="lnk" href="#price">料金</a>
       <a class="lnk" href="#faq">よくある質問</a>
-      <a class="cta" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">入手する</a>
+      <a class="cta" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">入手する</a>
     </nav>
   </div>
 </header>
@@ -252,13 +287,26 @@
       <h1>今日の仕事を、<br><span class="accent">日報まで整える</span>。</h1>
       <p class="lead">朝に予定を立て、作業時間を記録し、終業時には報連相まで整理。Hinotoは、日々のタスク・実績・振り返りをひとつにつなげるiPhone/iPadアプリです。</p>
       <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">無料で今日の段取りを作る</a>
+        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">無料で今日の段取りを作る</a>
         <a class="btn ghost" href="#features">機能を見る</a>
       </div>
       <p class="note">iOS / iPadOS対応 ・ 基本機能は無料 ・ iCloud同期対応</p>
     </div>
     <div class="shot">
-      <div class="device"><img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。タスク一覧、進捗、フォーカスタイマー、報連相タグを表示。" fetchpriority="high"></div>
+      <div class="herostack">
+        <div class="device front">
+          <picture>
+            <source type="image/webp" srcset="assets/today.webp">
+            <img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。タスク一覧、進捗、フォーカスタイマー、報連相タグを表示。" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="device back" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="assets/shutdown-04.webp">
+            <img src="assets/shutdown-04.png" width="1320" height="2868" alt="" loading="lazy">
+          </picture>
+        </div>
+      </div>
       <div class="heroTags"><span>見積もる</span><span>記録する</span><span>日報にする</span></div>
     </div>
   </div>
@@ -283,12 +331,43 @@
   </div>
 </section>
 
+<!-- ============ SOLUTION / WORKFLOW ============ -->
+<section id="howto" class="flow">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">解決策</span>
+      <h2>朝の予定が、夜の記録になる。</h2>
+      <p>Hinotoでは、朝に今日のタスクと見積もり時間を決めます。日中はフォーカスタイマーで実績を残し、必要な共有事項には報・連・相タグを付けます。そして終業時には、完了タスク、未完了タスク、報連相、所感をまとめて振り返れます。</p>
+    </div>
+    <div class="steps">
+      <div class="step am">
+        <span class="k">☀</span>
+        <p class="tag">朝</p>
+        <h4>今日できる量を見積もる</h4>
+        <p>タスクに見積時間を入れて、1日の作業量を現実的に把握。今日やることが多すぎないかを、朝のうちに確かめられます。</p>
+      </div>
+      <div class="step mid">
+        <span class="k">▷</span>
+        <p class="tag">日中</p>
+        <h4>進めながら実績を残す</h4>
+        <p>タイマーで作業時間を記録。完了率と実績が自然に積み上がり、あとから「何をどこまでやったか」を思い出す必要がありません。</p>
+      </div>
+      <div class="step pm">
+        <span class="k">☾</span>
+        <p class="tag">夜</p>
+        <h4>日報と報連相を整える</h4>
+        <p>完了・未完了・共有事項を確認し、日報としてまとめる。終業時の報告を、ゼロから書き起こさずに済みます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FEATURES ============ -->
 <section id="features">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">主な機能</span>
-      <h2>「今日」を起点に、週・月へとつながる</h2>
+      <h2>タスク管理に、実績と振り返りを。</h2>
       <p>毎日触るのは今日の画面だけ。そこに積み上がった記録が、週の振り返りや月のテーマへ自然につながります。</p>
     </div>
 
@@ -306,7 +385,7 @@
         </ul>
       </div>
       <div class="shot">
-        <div class="device"><img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。チャンネル色分け、見積もり時間、報連相タグ、フォーカスタイマーを表示。" loading="lazy"></div>
+        <div class="device"><picture><source type="image/webp" srcset="assets/today.webp"><img src="assets/today.png" width="1320" height="2868" alt="Hinoto『今日』の画面。チャンネル色分け、見積もり時間、報連相タグ、フォーカスタイマーを表示。" loading="lazy"></picture></div>
         <p class="cap">朝、今日できる量を見積もる</p>
       </div>
     </div>
@@ -324,7 +403,7 @@
         </ul>
       </div>
       <div class="shot">
-        <div class="device"><img src="assets/week.png" width="1320" height="2868" alt="Hinoto『今週』の画面。日別の完了率リング、今週のゴール3つ、週の振り返りを表示。" loading="lazy"></div>
+        <div class="device"><picture><source type="image/webp" srcset="assets/week.webp"><img src="assets/week.png" width="1320" height="2868" alt="Hinoto『今週』の画面。日別の完了率リング、今週のゴール3つ、週の振り返りを表示。" loading="lazy"></picture></div>
         <p class="cap">今週やり切ることを3つに絞る</p>
       </div>
     </div>
@@ -342,7 +421,7 @@
         </ul>
       </div>
       <div class="shot">
-        <div class="device"><img src="assets/month.png" width="1320" height="2868" alt="Hinoto『今月』の画面。今月のテーマ、達成カレンダーのヒートマップ、完了率の推移グラフを表示。" loading="lazy"></div>
+        <div class="device"><picture><source type="image/webp" srcset="assets/month.webp"><img src="assets/month.png" width="1320" height="2868" alt="Hinoto『今月』の画面。今月のテーマ、達成カレンダーのヒートマップ、完了率の推移グラフを表示。" loading="lazy"></picture></div>
         <p class="cap">見積と実績の傾向を振り返る</p>
       </div>
     </div>
@@ -359,7 +438,7 @@
         </ul>
       </div>
       <div class="shot">
-        <div class="device"><img src="assets/shutdown-04.png" width="1320" height="2868" alt="Hinoto『しめくくり』の画面。今日の振り返りの記入と、日報の共有を表示。" loading="lazy"></div>
+        <div class="device"><picture><source type="image/webp" srcset="assets/shutdown-04.webp"><img src="assets/shutdown-04.png" width="1320" height="2868" alt="Hinoto『しめくくり』の画面。今日の振り返りの記入と、日報の共有を表示。" loading="lazy"></picture></div>
         <p class="cap">完了・未完了・所感を、日報にまとめる</p>
       </div>
     </div>
@@ -380,43 +459,12 @@
         <li>整った文章でコピーして、Slackやメールにそのまま貼れる（Pro）</li>
       </ul>
       <div class="actions">
-        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">無料で試す</a>
+        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">無料で試す</a>
       </div>
     </div>
     <div class="shot">
-      <div class="device"><img src="assets/shutdown-03.png" width="1320" height="2868" alt="Hinoto『しめくくり』の報連相メモ画面。報告・連絡・相談をまとめ、共有できる。" loading="lazy"></div>
+      <div class="device"><picture><source type="image/webp" srcset="assets/shutdown-03.webp"><img src="assets/shutdown-03.png" width="1320" height="2868" alt="Hinoto『しめくくり』の報連相メモ画面。報告・連絡・相談をまとめ、共有できる。" loading="lazy"></picture></div>
       <p class="cap">報連相メモを、タグからまとめる</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ HOW TO ============ -->
-<section id="howto" class="flow">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">使い方</span>
-      <h2>朝・日中・夜の、3つのリズム</h2>
-      <p>難しい設定は不要。1日の流れに沿って、アプリが次の一手をそっと差し出します。</p>
-    </div>
-    <div class="steps">
-      <div class="step am">
-        <span class="k">☀</span>
-        <p class="tag">朝</p>
-        <h4>今日を組み立てる</h4>
-        <p>やることを書き出し、見積もり時間を添える。「プラン」でタイムブロックに割り付け、「朝礼コピー」でその日の予定をチームへ共有できます。</p>
-      </div>
-      <div class="step mid">
-        <span class="k">▷</span>
-        <p class="tag">日中</p>
-        <h4>実行して記録する</h4>
-        <p>タスクのタイマーを回せば実績が自動で積み上がる。完了率と実績/見積が常に上部に出るので、ペース配分を見ながら進められます。</p>
-      </div>
-      <div class="step pm">
-        <span class="k">☾</span>
-        <p class="tag">夜</p>
-        <h4>締めて振り返る</h4>
-        <p>「しめくくり」で今日の成果を確認し、所感を一言。完成した日報はワンタップで共有して、報告もそのまま完了します。</p>
-      </div>
     </div>
   </div>
 </section>
@@ -475,7 +523,7 @@
     </div>
     <p class="cmpnote">Hinotoは、ToDo・時間記録・日報作成を別々に管理するのではなく、1日の仕事の流れとして扱います。</p>
     <div class="actions">
-      <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">Hinotoを試す</a>
+      <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">Hinotoを試す</a>
     </div>
   </div>
 </section>
@@ -499,7 +547,7 @@
           <li>しめくくり（全ステップ）で日報まで</li>
           <li>iCloud同期</li>
         </ul>
-        <a class="btn ghost" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">App Store で無料ではじめる</a>
+        <a class="btn ghost" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">App Store で無料ではじめる</a>
       </div>
       <div class="plan pro">
         <span class="ptag">Pro</span>
@@ -511,7 +559,7 @@
           <li>見積と実績のズレを、次の計画へ活かせる<span>振り返り履歴・詳細分析</span></li>
           <li>Slackやメールに貼る報告文を、整えてコピー<span>報連相サマリー</span></li>
         </ul>
-        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">Proを試す</a>
+        <a class="btn primary" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを入手（Proはアプリ内から）">Proを試す</a>
       </div>
     </div>
     <p class="priceline">無料機能はずっと無料。Pro はいつでも購入でき、どのプランでも使えるPro機能は同じです。</p>
@@ -574,9 +622,10 @@
 <section class="final">
   <div class="wrap">
     <div class="box">
-      <h2>今日の段取りから、始めよう。</h2>
-      <p>書く・進める・振り返る。Hinotoがあれば、1日のリズムが自然と整います。まずは無料で。</p>
-      <a class="btn white" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">App Store で入手</a>
+      <h2>今日の段取りから、日報まで整えよう。</h2>
+      <p>まずは今日のタスクを並べるところから。見積もり、実績、報連相、振り返りが自然につながれば、終業時の負担は少し軽くなります。</p>
+      <a class="btn white" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">App Store で無料ではじめる</a>
+      <p class="fine">基本機能は無料。必要になったらProへ。</p>
     </div>
   </div>
 </section>
@@ -595,8 +644,33 @@
 </footer>
 
 <div class="stickycta">
-  <a href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8">無料で始める</a>
+  <a href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" aria-label="App StoreでHinotoを無料で入手">無料で始める</a>
 </div>
+
+<script>
+(function(){
+  try{
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var sel = '.section-head,.problem .lead,.probs,.feature,.report .rtxt,.report .shot,.steps .step,.grid3 .mini,.cmpwrap,.cmpnote,.plans .plan,.trust .lead,.titems,.final .box';
+    var els = [].slice.call(document.querySelectorAll(sel));
+    if(!els.length) return;
+    document.documentElement.classList.add('reveal-ready');
+    var check = function(){
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      els = els.filter(function(el){
+        if(el.getBoundingClientRect().top < vh * 0.9){ el.classList.add('is-in'); return false; }
+        return true;
+      });
+      if(!els.length){ window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); }
+    };
+    var ticking = false;
+    var onScroll = function(){ if(!ticking){ ticking = true; requestAnimationFrame(function(){ ticking = false; check(); }); } };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    check(); // 初期表示（ファーストビュー内の要素を出す）
+  }catch(e){ /* 失敗時はコンテンツを表示したまま */ }
+})();
+</script>
 
 </body>
 </html>
