@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // Carry over the language chosen on the RINRO site (shared localStorage key).
+    (function () {
+      try {
+        if (localStorage.getItem("rinro-language") === "en") {
+          window.location.replace("index.en.html");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <meta name="color-scheme" content="light" />
   <title>Yosuga — 保存は、未来の自分との約束。</title>
   <meta name="description" content="Yosugaは、保存を「未来の自分との約束」に変えるiOSアプリ。あずけたものは、時が来たら、あなたのもとに訪れる。忘れていい。Yosugaが、憶えている。" />
@@ -399,7 +409,7 @@
   <script defer src="../assets/analytics.js"></script>
 </head>
 <body>
-  <nav class="page-lang" aria-label="Language">日本語 · <a href="index.en.html">English</a></nav>
+  <nav class="page-lang" aria-label="Language">日本語 · <a href="index.en.html" onclick="try{localStorage.setItem('rinro-language','en')}catch(e){}">English</a></nav>
   <div class="sky" aria-hidden="true"></div>
 
   <!-- ───── ヒーロー ───── -->
@@ -649,7 +659,7 @@
 
   <!-- ───── フッタ ───── -->
   <footer class="site">
-    <p class="lang">日本語 · <a href="index.en.html">English</a></p>
+    <p class="lang">日本語 · <a href="index.en.html" onclick="try{localStorage.setItem('rinro-language','en')}catch(e){}">English</a></p>
     <nav>
       <a href="legal/terms-of-service/" target="_blank" rel="noopener" aria-label="利用規約を新しいタブで開く">利用規約</a>・
       <a href="legal/privacy-policy/" target="_blank" rel="noopener" aria-label="プライバシーポリシーを新しいタブで開く">プライバシーポリシー</a>・
