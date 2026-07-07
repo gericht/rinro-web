@@ -55,7 +55,7 @@
 
   /* ===== hero ===== */
   .hero{background:linear-gradient(180deg,var(--hero),var(--bg));padding:70px 0 40px;}
-  .hero .wrap{display:grid;grid-template-columns:1fr minmax(280px,340px);gap:46px;align-items:center;}
+  .hero .wrap{display:grid;grid-template-columns:1fr minmax(300px,420px);gap:46px;align-items:center;}
   .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.18;font-weight:800;letter-spacing:.01em;margin:14px 0 16px;}
   .hero h1 .accent{color:var(--green);}
   .hero p.lead{font-size:17px;color:var(--sub);max-width:30em;}
@@ -69,7 +69,7 @@
   .hero .shot{display:flex;flex-direction:column;align-items:center;justify-content:center;}
   .hero .heroTags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;}
   .hero .heroTags span{font-size:12px;font-weight:700;color:var(--green2);background:rgba(47,107,79,.08);border:1px solid var(--line);padding:5px 12px;border-radius:999px;}
-  @media(max-width:840px){.hero .wrap{grid-template-columns:1fr;text-align:center;}
+  @media(max-width:900px){.hero .wrap{grid-template-columns:1fr;text-align:center;}
     .hero p.lead{margin-left:auto;margin-right:auto;} .hero .actions{justify-content:center;} .hero .shot{margin-top:8px;}}
 
   /* screenshot caption (意味づけラベル) */
@@ -265,17 +265,16 @@
   .device{width:290px;max-width:80vw;padding:9px;background:#15171a;border-radius:46px;box-shadow:0 22px 50px rgba(0,0,0,.22);flex:none;}
   .device img{display:block;width:100%;height:auto;border-radius:38px;}
 
-  /* hero: 今日画面（手前）＋しめくくり画面（奥）— 奥もしめくくり=日報画面と分かるまで見せる */
+  /* hero: 今日画面（手前）＋しめくくり画面（奥）を並べて見せる（奥は8割以上表示） */
   .herostack{position:relative;display:inline-block;}
   .herostack .device.front{position:relative;z-index:2;width:290px;max-width:78vw;}
-  .herostack .device.back,.herostack .backcap{display:none;}
-  @media(min-width:841px){
-    .herostack{width:356px;height:610px;}
-    .herostack .device{position:absolute;top:0;}
-    .herostack .device.front{left:0;width:272px;max-width:none;}
-    .herostack .device.back{display:block;right:0;top:34px;width:180px;z-index:1;padding:6px;border-radius:32px;box-shadow:0 18px 40px rgba(0,0,0,.22);}
-    .herostack .device.back img{border-radius:26px;}
-    .herostack .backcap{display:block;position:absolute;z-index:3;right:2px;top:-2px;font-size:11.5px;font-weight:700;color:#fff;background:var(--green);padding:5px 12px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.20);white-space:nowrap;}
+  .herostack .device.back{display:none;}
+  @media(min-width:901px){
+    .herostack{width:408px;height:592px;}
+    .herostack .device{position:absolute;}
+    .herostack .device.front{left:0;top:52px;width:240px;max-width:none;}
+    .herostack .device.back{display:block;right:0;top:0;width:210px;z-index:1;padding:7px;border-radius:38px;box-shadow:0 18px 40px rgba(0,0,0,.20);}
+    .herostack .device.back img{border-radius:30px;}
   }
 
   /* ================= motion（section 8 / prefers-reduced-motion 対応） ================= */
@@ -355,7 +354,6 @@
             <img src="assets/shutdown-04.png" width="1320" height="2868" alt="Hinoto『しめくくり』の画面。1日の振り返りと日報の作成を表示。" loading="lazy">
           </picture>
         </div>
-        <span class="backcap" aria-hidden="true">しめくくり → 日報</span>
       </div>
       <div class="heroTags"><span>見積もる</span><span>記録する</span><span>日報にする</span></div>
     </div>
