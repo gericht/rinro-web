@@ -55,7 +55,7 @@
 
   /* ===== hero ===== */
   .hero{background:linear-gradient(180deg,var(--hero),var(--bg));padding:70px 0 40px;}
-  .hero .wrap{display:grid;grid-template-columns:1fr minmax(300px,420px);gap:46px;align-items:center;}
+  .hero .wrap{display:grid;grid-template-columns:1fr minmax(300px,430px);gap:46px;align-items:center;}
   .hero h1{font-size:clamp(30px,5vw,46px);line-height:1.18;font-weight:800;letter-spacing:.01em;margin:14px 0 16px;}
   .hero h1 .accent{color:var(--green);}
   .hero p.lead{font-size:17px;color:var(--sub);max-width:30em;}
@@ -265,16 +265,16 @@
   .device{width:290px;max-width:80vw;padding:9px;background:#15171a;border-radius:46px;box-shadow:0 22px 50px rgba(0,0,0,.22);flex:none;}
   .device img{display:block;width:100%;height:auto;border-radius:38px;}
 
-  /* hero: 今日画面（手前）＋しめくくり画面（奥）を並べて見せる（奥は8割以上表示） */
+  /* hero: 今日画面（手前・通常サイズ272px）＋しめくくり画面（奥・小さめ176px／約8割表示） */
   .herostack{position:relative;display:inline-block;}
   .herostack .device.front{position:relative;z-index:2;width:290px;max-width:78vw;}
   .herostack .device.back{display:none;}
   @media(min-width:901px){
-    .herostack{width:408px;height:592px;}
-    .herostack .device{position:absolute;}
-    .herostack .device.front{left:0;top:52px;width:240px;max-width:none;}
-    .herostack .device.back{display:block;right:0;top:0;width:210px;z-index:1;padding:7px;border-radius:38px;box-shadow:0 18px 40px rgba(0,0,0,.20);}
-    .herostack .device.back img{border-radius:30px;}
+    .herostack{width:414px;height:610px;}
+    .herostack .device{position:absolute;top:0;}
+    .herostack .device.front{left:0;width:272px;max-width:none;z-index:2;}
+    .herostack .device.back{display:block;right:0;top:44px;width:176px;z-index:1;padding:6px;border-radius:32px;box-shadow:0 16px 38px rgba(0,0,0,.20);}
+    .herostack .device.back img{border-radius:26px;}
   }
 
   /* ================= motion（section 8 / prefers-reduced-motion 対応） ================= */
