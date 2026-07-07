@@ -194,14 +194,13 @@
   .est-row:last-of-type{margin-bottom:0;}
   .est-row .name{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;font-weight:700;margin-bottom:8px;}
   .est-row .delta{font-size:12px;font-weight:800;}
-  .est-row .delta.over{color:var(--orange);}
-  .est-row .delta.under{color:var(--green2);}
+  .est-row .delta.over{color:#c0392b;}   /* 見積超過（+）＝注意色の赤 */
+  .est-row .delta.under{color:#2f77b5;}  /* 見積内（−）＝実績の緑と被らない青 */
   .estviz .bar{position:relative;height:8px;border-radius:999px;background:#eef0ea;margin-bottom:6px;overflow:hidden;}
   .estviz .bar:last-child{margin-bottom:0;}
   .estviz .bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:999px;display:block;}
   .estviz .bar.est>i{background:#c7d0c0;}
-  .estviz .bar.act>i{background:var(--green);}
-  .estviz .bar.act.over>i{background:var(--orange);}
+  .estviz .bar.act>i{background:var(--green);}  /* 実績バーは凡例どおり常に緑 */
   .est-legend{display:flex;gap:18px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--sub);}
   .est-legend span{display:inline-flex;align-items:center;gap:6px;}
   .est-legend i{width:11px;height:11px;border-radius:3px;display:inline-block;}
@@ -565,7 +564,7 @@
       <div class="est-row">
         <div class="name">企画書の作成 <span class="delta over">+25分</span></div>
         <div class="bar est"><i style="width:83%"></i></div>
-        <div class="bar act over"><i style="width:100%"></i></div>
+        <div class="bar act"><i style="width:100%"></i></div>
       </div>
       <div class="est-row">
         <div class="name">取引先との打ち合わせ <span class="delta under">−10分</span></div>
@@ -575,7 +574,7 @@
       <div class="est-row">
         <div class="name">資料レビュー <span class="delta over">+10分</span></div>
         <div class="bar est"><i style="width:21%"></i></div>
-        <div class="bar act over"><i style="width:28%"></i></div>
+        <div class="bar act"><i style="width:28%"></i></div>
       </div>
       <div class="est-legend">
         <span><i style="background:#c7d0c0"></i>見積</span>
