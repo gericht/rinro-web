@@ -56,7 +56,13 @@
     "pressnowSiteName": "PRESSNOW (https://pressnow.jp/)",
     "pressnowBody1Suffix": ".",
     "pressnowBody2": "Hinoto is a daily management app that supports morning planning, midday focus, and evening reflection in one continuous flow. We will continue improving the app so working people can better engage with their time and spend each day more comfortably.",
-    "pressnowLinkLabel": "PRESSNOW article: "
+    "pressnowLinkLabel": "PRESSNOW article: ",
+    "yosugaLaunchEyebrow": "Release",
+    "yosugaLaunchTitle": "Yosuga is now available on the App Store",
+    "yosugaLaunchBody1": "Yosuga, the iOS app that turns saving into a promise to your future self, is now available on the App Store. Entrust something you care about, and a quiet word arrives on the promised day so you can see it through — reading, watching, going, buying, or making. The promise loop (entrust → word → today's promises → fulfill) is free to use.",
+    "yosugaLaunchBody2": "See the product page for the full details. We'll keep refining the app so it can hand your promises to your future self, quietly and surely.",
+    "yosugaLaunchProductLabel": "Product page: ",
+    "yosugaLaunchStoreLabel": "App Store: "
   },
   "notFound": {
     "title": "Page not found.",
