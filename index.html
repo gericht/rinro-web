@@ -81,7 +81,7 @@
         <div class="app-grid" aria-label="Applications">
           <article class="app-card">
             <div class="app-thumb">
-              <img class="app-thumb-image" src="assets/apps/hinoto-thumbnail.png" alt="">
+              <img class="app-thumb-image" src="assets/apps/hinoto-thumbnail.png" alt="" loading="lazy" decoding="async">
             </div>
             <div class="app-body">
               <div class="app-icon app-icon-image" aria-hidden="true">
@@ -97,7 +97,21 @@
           </article>
           <article class="app-card">
             <div class="app-thumb">
-              <img class="app-thumb-image" src="assets/apps/yosuga-thumbnail.png" alt="" data-i18n-attr="src:home.yosugaThumbnail">
+              <!-- Set the initial src from the chosen language before the parser fetches it,
+                   so a visitor only ever downloads one localized thumbnail (no wrong-language
+                   flash / double fetch). main.js keeps it in sync on later language toggles. -->
+              <img class="app-thumb-image" alt="" loading="lazy" decoding="async" data-thumb-base="assets/apps/yosuga-thumbnail" data-i18n-attr="src:home.yosugaThumbnail">
+              <script>
+                (function () {
+                  var langs = ["ja", "en"], stored = null;
+                  try { stored = localStorage.getItem("rinro-language"); } catch (e) {}
+                  var browser = (navigator.language || "").slice(0, 2);
+                  var lang = langs.indexOf(stored) > -1 ? stored : (langs.indexOf(browser) > -1 ? browser : "ja");
+                  var img = document.currentScript.previousElementSibling;
+                  img.src = img.dataset.thumbBase + (lang === "en" ? "-en" : "") + ".png";
+                })();
+              </script>
+              <noscript><img class="app-thumb-image" src="assets/apps/yosuga-thumbnail.png" alt=""></noscript>
             </div>
             <div class="app-body">
               <div class="app-icon app-icon-image" aria-hidden="true">
