@@ -22,6 +22,7 @@
     "hinotoDescription": "朝の計画、昼の集中、夜のしめくくりを1つの流れで支援。日報・振り返り・時間分析までを備えた、働く人のための新しい一日管理のアプリケーションです。",
     "yosugaName": "Yosuga",
     "yosugaDescription": "保存を「未来の自分との約束」に変え、その約束を守れるかたちにして返すアプリケーションです。",
+    "yosugaThumbnail": "assets/apps/yosuga-thumbnail.png",
     "appPage": "App page",
     "appStore": "App Store",
     "newsTitle": "Latest News",
@@ -56,7 +57,13 @@
     "pressnowSiteName": "PRESSNOW プレスナウ（https://pressnow.jp/）",
     "pressnowBody1Suffix": "に掲載されました。",
     "pressnowBody2": "Hinotoは、朝の計画、昼の集中、夜の振り返りを一つの流れで支援する、一日管理アプリです。今後も、働く人が自分自身の時間と向き合い、一日をより心地よく過ごせるよう、継続的な機能改善と体験の向上に取り組んでまいります。",
-    "pressnowLinkLabel": "PRESSNOW掲載ページ："
+    "pressnowLinkLabel": "PRESSNOW掲載ページ：",
+    "yosugaLaunchEyebrow": "Release",
+    "yosugaLaunchTitle": "iOSアプリ『Yosuga』をApp Storeで公開しました",
+    "yosugaLaunchBody1": "保存を「未来の自分との約束」に変えるiOSアプリ『Yosuga』を、App Storeで公開しました。気になるものをあずけると、約束の日にそっと便りが届き、読む・見る・行く・買う・作るというかたちで果たせます。約束ループ（あずける→便り→今日の約束→果たす）は無料でお使いいただけます。",
+    "yosugaLaunchBody2": "アプリの詳細は製品ページをご覧ください。今後も、静かに、確かに、未来のあなたへ約束を手渡せるよう、機能改善に取り組んでまいります。",
+    "yosugaLaunchProductLabel": "製品ページ：",
+    "yosugaLaunchStoreLabel": "App Store："
   },
   "notFound": {
     "title": "Page not found.",

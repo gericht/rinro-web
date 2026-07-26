@@ -133,7 +133,7 @@
     /* 文の途中で折り返さず、文単位で改行する */
     .hero .lead .s { display: block; white-space: nowrap; }
 
-    /* App Store バッジ（未リリース＝近日公開のプレースホルダ・標準の黒バッジ） */
+    /* App Store バッジ（App Store で公開中・標準の黒バッジ） */
     .cta { margin: 40px 0 8px; }
     .appstore-badge {
       display: inline-flex;
@@ -144,9 +144,13 @@
       border: 1px solid rgba(27, 36, 64, 0.16);
       background: #11172E;
       color: #EAEEF8;
-      cursor: default;
-      user-select: none;
       box-shadow: 0 8px 24px rgba(40, 54, 86, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    a.appstore-badge:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(40, 54, 86, 0.26);
     }
     .appstore-badge svg { width: 26px; height: 26px; flex: none; fill: #EAEEF8; opacity: 0.95; }
     .appstore-badge .b-top { display: block; font-size: 0.66rem; letter-spacing: 0.18em; color: #AEB7D2; line-height: 1.4; }
@@ -420,14 +424,14 @@
     <p class="lead"><span class="s">あずけたものは、時が来たら、あなたのもとに訪れる。</span><span class="s">いつか、を今日にするために。</span></p>
 
     <div class="cta">
-      <span class="appstore-badge" role="img" aria-label="近日 App Store にて公開">
+      <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6779824639?pt=128455553&ct=Yosuga%20LP&mt=8" rel="noopener" aria-label="App Store で Yosuga を入手">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.02-2.05 1.68-3.03 1.75-3.08-.95-1.4-2.44-1.59-2.97-1.61-1.26-.13-2.47.74-3.11.74-.64 0-1.63-.72-2.69-.7-1.38.02-2.66.8-3.37 2.04-1.44 2.49-.37 6.17 1.03 8.19.69.99 1.5 2.1 2.57 2.06 1.03-.04 1.42-.66 2.67-.66 1.24 0 1.6.66 2.69.64 1.11-.02 1.81-1 2.49-1.99.79-1.14 1.11-2.25 1.13-2.31-.02-.01-2.17-.83-2.19-3.3zM15.0 5.57c.57-.69.95-1.65.85-2.61-.82.03-1.81.55-2.4 1.24-.53.61-.99 1.59-.87 2.53.91.07 1.85-.47 2.42-1.16z"/></svg>
         <span>
-          <span class="b-top">COMING SOON</span>
-          <span class="b-main">近日 App Store にて公開</span>
+          <span class="b-top">DOWNLOAD ON THE</span>
+          <span class="b-main">App Store</span>
         </span>
-      </span>
-      <p class="note">iPhone 向けに準備を進めています。リリースまで、もう少しだけ。</p>
+      </a>
+      <p class="note">iPhone 向けに公開中。約束ループは無料でお使いいただけます。</p>
     </div>
 
     <div class="hero-device">
@@ -647,13 +651,13 @@
     <h2>忘れていい。<span class="glow">Yosuga が、憶えている。</span></h2>
     <p>いつか、を今日にする。</p>
     <div class="cta">
-      <span class="appstore-badge" role="img" aria-label="近日 App Store にて公開">
+      <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6779824639?pt=128455553&ct=Yosuga%20LP&mt=8" rel="noopener" aria-label="App Store で Yosuga を入手">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.02-2.05 1.68-3.03 1.75-3.08-.95-1.4-2.44-1.59-2.97-1.61-1.26-.13-2.47.74-3.11.74-.64 0-1.63-.72-2.69-.7-1.38.02-2.66.8-3.37 2.04-1.44 2.49-.37 6.17 1.03 8.19.69.99 1.5 2.1 2.57 2.06 1.03-.04 1.42-.66 2.67-.66 1.24 0 1.6.66 2.69.64 1.11-.02 1.81-1 2.49-1.99.79-1.14 1.11-2.25 1.13-2.31-.02-.01-2.17-.83-2.19-3.3zM15.0 5.57c.57-.69.95-1.65.85-2.61-.82.03-1.81.55-2.4 1.24-.53.61-.99 1.59-.87 2.53.91.07 1.85-.47 2.42-1.16z"/></svg>
         <span>
-          <span class="b-top">COMING SOON</span>
-          <span class="b-main">近日 App Store にて公開</span>
+          <span class="b-top">DOWNLOAD ON THE</span>
+          <span class="b-main">App Store</span>
         </span>
-      </span>
+      </a>
     </div>
   </section>
 
