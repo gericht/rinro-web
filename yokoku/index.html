@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yokoku｜横方向のビジュアルバータイマー</title>
+<meta name="description" content="Yokokuは、残り時間を横方向のビジュアルバーで示すiPhone向けタイマーアプリです。バーは左端から減り、数字と同じ状態から描かれます。横画面専用、省電力優先。">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://rinro.jp/yokoku/">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yokoku｜横方向のビジュアルバータイマー">
+<meta property="og:description" content="残り時間を横方向のビジュアルバーで示すiPhone向けタイマーアプリ。バーは左端から減り、数字と同じ状態から描かれます。">
+<meta property="og:url" content="https://rinro.jp/yokoku/">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://rinro.jp/assets/apps/yokoku-thumbnail.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yokoku｜横方向のビジュアルバータイマー">
+<meta name="twitter:description" content="残り時間を横方向のビジュアルバーで示すiPhone向けタイマーアプリ。バーは左端から減り、数字と同じ状態から描かれます。">
+<meta name="twitter:image" content="https://rinro.jp/assets/apps/yokoku-thumbnail.png">
+<link rel="stylesheet" href="assets/mock.css">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #000000;
+    --text: #f5f5f5;
+    --secondary: #949494;
+    --accent: #5cccff;
+    --border: #262626;
+    --surface: #121212;
+    --ff: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ff);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    padding: 22px 0;
+  }
+  header.top .wrap { display: flex; align-items: center; }
+  .home-link {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .home-link:hover { color: var(--text); text-decoration: none; }
+
+  .hero { padding: 28px 0 64px; }
+  .hero .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 380px) 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .app-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 20px;
+  }
+  .eyebrow {
+    margin: 22px 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--secondary);
+    text-transform: uppercase;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(40px, 6vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    margin: 18px 0 0;
+    font-size: 17px;
+    color: var(--secondary);
+    max-width: 30em;
+  }
+  .cta-row { margin-top: 30px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid var(--border);
+  }
+  .btn.disabled {
+    background: var(--surface);
+    color: var(--secondary);
+    opacity: 0.85;
+    cursor: default;
+    pointer-events: none;
+  }
+  .cta-note { font-size: 13px; color: var(--secondary); }
+
+  .hero-visual .yk-mock {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    padding: 5.5%;
+  }
+
+  section.features { padding: 20px 0 72px; border-top: 1px solid var(--border); }
+  .features .wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .feature-card {
+    background: var(--bg);
+    padding: 32px;
+  }
+  .feature-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .feature-card p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--secondary);
+  }
+
+  footer.site {
+    border-top: 1px solid var(--border);
+    padding: 32px 0 48px;
+  }
+  footer.site .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  footer.site nav { display: flex; gap: 20px; flex-wrap: wrap; }
+  footer.site nav a, footer.site .rinro { color: var(--secondary); font-size: 13px; }
+  footer.site nav a:hover, footer.site .rinro:hover { color: var(--text); }
+  footer.site .copyright { font-size: 13px; color: var(--secondary); }
+
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-visual { order: -1; }
+    .features .wrap { grid-template-columns: 1fr; }
+  }
+</style>
+<script defer src="../assets/analytics.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="home-link" href="../">← RINRO</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-copy">
+          <img class="app-icon" src="assets/icon.png" alt="">
+          <p class="eyebrow">iPhone・ビジュアルバータイマー</p>
+          <h1>Yokoku</h1>
+          <p class="lead">残り時間を、横方向のバーで見る。数字を読んで計算する代わりに、目盛りの残量でひと目で残り時間がわかる、横画面専用のタイマーです。</p>
+          <div class="cta-row">
+            <span class="btn disabled" aria-disabled="true">App Store で近日公開</span>
+          </div>
+          <p class="cta-note" style="margin-top: 14px;">現在開発中です。公開まで、もうしばらくお待ちください。</p>
+        </div>
+        <div class="hero-visual">
+          <div class="yk-mock">
+            <div class="yk-mock-upper">
+              <div class="yk-mock-controls">
+                <div class="yk-mock-row">
+                  <div class="yk-mock-btn primary">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"/></svg>
+                  </div>
+                  <div class="yk-mock-btn">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 2.6 5.9"/><path d="M4 20v-6h6"/></svg>
+                  </div>
+                </div>
+                <div class="yk-mock-row">
+                  <div class="yk-mock-btn">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="2" fill="currentColor" stroke="none"/></svg>
+                  </div>
+                  <div class="yk-mock-btn on">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 6l6 6-6 6"/></svg>
+                  </div>
+                  <div class="yk-mock-btn">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
+                  </div>
+                </div>
+                <div class="yk-mock-row">
+                  <div class="yk-mock-btn on">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l4 4V6L7 10H4Z"/><path d="M17 9a5 5 0 0 1 0 6"/></svg>
+                  </div>
+                  <div class="yk-mock-btn on">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
+                  </div>
+                  <div class="yk-mock-btn">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/><path d="M9 21v-3h6v3"/></svg>
+                  </div>
+                  <div class="yk-mock-btn">
+                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="yk-mock-divider"></div>
+              <div class="yk-mock-readout">
+                <div class="yk-mock-status">計測中</div>
+                <div class="yk-mock-number">18:45</div>
+                <div class="yk-mock-meta">
+                  <div class="yk-mock-mode">カウントダウン</div>
+                  <div class="yk-mock-footer">残り／設定 25:00</div>
+                </div>
+              </div>
+            </div>
+            <div class="yk-mock-bar">
+              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
+              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
+              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
+              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
+              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
+              <div class="yk-mock-tick" style="background:#26D9AC"></div>
+              <div class="yk-mock-tick" style="background:#26D9AC"></div>
+              <div class="yk-mock-tick" style="background:#26D9AC"></div>
+              <div class="yk-mock-tick" style="background:#26D9AC"></div>
+              <div class="yk-mock-tick" style="background:#26D9AC"></div>
+              <div class="yk-mock-tick" style="background:#FFDC00"></div>
+              <div class="yk-mock-tick" style="background:#FFDC00"></div>
+              <div class="yk-mock-tick" style="background:#FFDC00"></div>
+              <div class="yk-mock-tick" style="background:#FFDC00"></div>
+              <div class="yk-mock-tick" style="background:#FFDC00"></div>
+              <div class="yk-mock-tick" style="background:#E62F8B"></div>
+              <div class="yk-mock-tick" style="background:#E62F8B"></div>
+              <div class="yk-mock-tick" style="background:#E62F8B"></div>
+              <div class="yk-mock-tick" style="background:#E62F8B"></div>
+              <div class="yk-mock-tick" style="background:#E62F8B"></div>
+              <div class="yk-mock-halfway" style="left:52.5%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap">
+        <div class="feature-card">
+          <h3>バーは左端から減る</h3>
+          <p>参考にした専用機とは逆向きの、独自仕様。目盛りの残量を見るだけで、数字を読んで計算しなくても「あとどれくらいか」がひと目でわかります。</p>
+        </div>
+        <div class="feature-card">
+          <h3>数字とバーはズレない</h3>
+          <p>残り時間の数字とビジュアルバーは、常に同じ状態から描かれます。表示のあいだで計算方法が変わることはありません。</p>
+        </div>
+        <div class="feature-card">
+          <h3>省電力を最優先に設計</h3>
+          <p>毎秒の描き直しや常時アニメーションは行いません。次に見た目が変わる瞬間だけ、表示を1回更新します。長時間点けっぱなしにしても電池に優しい設計です。</p>
+        </div>
+        <div class="feature-card">
+          <h3>閉じていても知らせる</h3>
+          <p>バックグラウンドに移っても、区切りと終了はローカル通知で知らせます。横画面専用（Landscape Left / Right 両対応）、通常計測とリピート計測（作業・休憩）に対応しています。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <nav>
+        <a href="legal/privacy-policy/">プライバシーポリシー</a>
+        <a href="legal/terms-of-service/">利用規約</a>
+        <a href="legal/contact/">お問い合わせ</a>
+      </nav>
+      <span class="copyright">© RINRO</span>
+    </div>
+  </footer>
+</body>
+</html>
