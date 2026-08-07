@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rinro.jp/</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://rinro.jp/privacy.html</loc>
@@ -11,6 +11,10 @@
   <url>
     <loc>https://rinro.jp/yosuga/</loc>
     <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/yokoku/</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://rinro.jp/news/yosuga-app-store-launch.html</loc>
