@@ -19,7 +19,6 @@
 <meta name="twitter:title" content="Yokoku｜横方向のビジュアルバータイマー">
 <meta name="twitter:description" content="残り時間を横方向のビジュアルバーで示すiPhone向けタイマーアプリ。バーは左端から減り、数字と同じ状態から描かれます。">
 <meta name="twitter:image" content="https://rinro.jp/assets/apps/yokoku-thumbnail.png">
-<link rel="stylesheet" href="assets/mock.css">
 <style>
   :root {
     color-scheme: dark;
@@ -111,12 +110,12 @@
   }
   .cta-note { font-size: 13px; color: var(--secondary); }
 
-  .hero-visual .yk-mock {
+  .hero-visual .home-shot {
     width: 100%;
-    aspect-ratio: 16 / 10;
+    display: block;
+    aspect-ratio: 2622 / 1206;
     border-radius: 22px;
     border: 1px solid var(--border);
-    padding: 5.5%;
   }
 
   section.features { padding: 20px 0 72px; border-top: 1px solid var(--border); }
@@ -190,77 +189,7 @@
           <p class="cta-note" style="margin-top: 14px;">現在開発中です。公開まで、もうしばらくお待ちください。</p>
         </div>
         <div class="hero-visual">
-          <div class="yk-mock">
-            <div class="yk-mock-upper">
-              <div class="yk-mock-controls">
-                <div class="yk-mock-row">
-                  <div class="yk-mock-btn primary">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6,4 20,12 6,20" fill="currentColor" stroke="none"/></svg>
-                  </div>
-                  <div class="yk-mock-btn">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 1 2.6 5.9"/><path d="M4 20v-6h6"/></svg>
-                  </div>
-                </div>
-                <div class="yk-mock-row">
-                  <div class="yk-mock-btn">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2" fill="currentColor" stroke="none"/><circle cx="15" cy="17" r="2" fill="currentColor" stroke="none"/></svg>
-                  </div>
-                  <div class="yk-mock-btn on">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h13M12 6l6 6-6 6"/></svg>
-                  </div>
-                  <div class="yk-mock-btn">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg>
-                  </div>
-                </div>
-                <div class="yk-mock-row">
-                  <div class="yk-mock-btn on">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h3l4 4V6L7 10H4Z"/><path d="M17 9a5 5 0 0 1 0 6"/></svg>
-                  </div>
-                  <div class="yk-mock-btn on">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg>
-                  </div>
-                  <div class="yk-mock-btn">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z"/><path d="M9 21v-3h6v3"/></svg>
-                  </div>
-                  <div class="yk-mock-btn">
-                    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>
-                  </div>
-                </div>
-              </div>
-              <div class="yk-mock-divider"></div>
-              <div class="yk-mock-readout">
-                <div class="yk-mock-status">計測中</div>
-                <div class="yk-mock-number">18:45</div>
-                <div class="yk-mock-meta">
-                  <div class="yk-mock-mode">カウントダウン</div>
-                  <div class="yk-mock-footer">残り／設定 25:00</div>
-                </div>
-              </div>
-            </div>
-            <div class="yk-mock-bar">
-              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
-              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
-              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
-              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
-              <div class="yk-mock-tick" style="background:#1c1c1c"></div>
-              <div class="yk-mock-tick" style="background:#26D9AC"></div>
-              <div class="yk-mock-tick" style="background:#26D9AC"></div>
-              <div class="yk-mock-tick" style="background:#26D9AC"></div>
-              <div class="yk-mock-tick" style="background:#26D9AC"></div>
-              <div class="yk-mock-tick" style="background:#26D9AC"></div>
-              <div class="yk-mock-tick" style="background:#FFDC00"></div>
-              <div class="yk-mock-tick" style="background:#FFDC00"></div>
-              <div class="yk-mock-tick" style="background:#FFDC00"></div>
-              <div class="yk-mock-tick" style="background:#FFDC00"></div>
-              <div class="yk-mock-tick" style="background:#FFDC00"></div>
-              <div class="yk-mock-tick" style="background:#E62F8B"></div>
-              <div class="yk-mock-tick" style="background:#E62F8B"></div>
-              <div class="yk-mock-tick" style="background:#E62F8B"></div>
-              <div class="yk-mock-tick" style="background:#E62F8B"></div>
-              <div class="yk-mock-tick" style="background:#E62F8B"></div>
-              <div class="yk-mock-halfway" style="left:52.5%"></div>
-            </div>
-          </div>
+          <img class="home-shot" src="assets/home.png" alt="Yokoku の実機画面。横方向のビジュアルバーと、カウントダウンの残り時間を表示している。">
         </div>
       </div>
     </section>
