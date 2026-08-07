@@ -12,7 +12,6 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body { color: #e5e5e7; background: #1c1c1e; }
-  a { color: #0a84ff; }
 }
 
 h1 { font-size: 1.7rem; margin-bottom: 0.25rem; }
@@ -27,6 +26,10 @@ h2 {
 p.updated, p.lead { color: #888; margin-top: 0; }
 
 a { color: #0077c2; }
+
+@media (prefers-color-scheme: dark) {
+  a { color: #0a84ff; }
+}
 
 ul { padding-left: 1.3rem; }
 li { margin: 0.4rem 0; }
