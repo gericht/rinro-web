@@ -30,7 +30,7 @@
     "appStoreSoon": "近日公開",
     "newsTitle": "Latest News",
     "newsBody": "リリース、アップデート、掲載情報など、RINROからのお知らせです。",
-    "newsMore": "お知らせ一覧を見る",
+    "newsMore": "Newsをもっと見る",
     "contactTitle": "Contact",
     "contactBody": "お問い合わせはメールまたはXからご連絡ください。"
   },
@@ -86,7 +86,7 @@
   },
   "news": {
     "error": "ニュースを読み込めませんでした。",
-    "pageTitle": "お知らせ一覧",
+    "pageTitle": "News",
     "pageLead": "リリース、アップデート、掲載情報など、RINROからのお知らせ一覧です。"
   }
 }
