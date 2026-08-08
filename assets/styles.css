@@ -426,6 +426,12 @@ h2 {
   line-height: 1;
 }
 
+#news-title {
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  line-height: 1;
+  font-weight: 680;
+}
+
 .article {
   max-width: 760px;
   margin: 0 auto;
