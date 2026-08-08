@@ -102,6 +102,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.querySelectorAll("[data-back-link]").forEach((link) => {
     link.addEventListener("click", (event) => {
+      const isPlainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+      if (!isPlainClick) return;
       const referrer = document.referrer && new URL(document.referrer);
       const cameFromSite = referrer && referrer.origin === location.origin && document.referrer !== location.href;
       if (cameFromSite && history.length > 1) {
