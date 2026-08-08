@@ -66,7 +66,13 @@
     "yosugaLaunchBody1": "保存を「未来の自分との約束」に変えるiOSアプリ『Yosuga』を、App Storeで公開しました。気になるものをあずけると、約束の日にそっと便りが届き、読む・見る・行く・買う・作るというかたちで果たせます。約束ループ（あずける→便り→今日の約束→果たす）は無料でお使いいただけます。",
     "yosugaLaunchBody2": "アプリの詳細は製品ページをご覧ください。今後も、静かに、確かに、未来のあなたへ約束を手渡せるよう、機能改善に取り組んでまいります。",
     "yosugaLaunchProductLabel": "製品ページ：",
-    "yosugaLaunchStoreLabel": "App Store："
+    "yosugaLaunchStoreLabel": "App Store：",
+    "hinotoLaunchEyebrow": "Release",
+    "hinotoLaunchTitle": "iOSアプリ『Hinoto』をApp Storeで公開しました",
+    "hinotoLaunchBody1": "朝の計画、昼の集中、夜のしめくくりを1つの流れで支援するiOSアプリ『Hinoto』を、App Storeで公開しました。日報・振り返り・時間分析まで、一日の段取りを手元で完結できます。",
+    "hinotoLaunchBody2": "アプリの詳細は製品ページをご覧ください。今後も、働く人が自分自身の時間と向き合い、一日をより心地よく過ごせるよう、機能改善に取り組んでまいります。",
+    "hinotoLaunchProductLabel": "製品ページ：",
+    "hinotoLaunchStoreLabel": "App Store："
   },
   "notFound": {
     "title": "Page not found.",
