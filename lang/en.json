@@ -30,6 +30,7 @@
     "appStoreSoon": "Coming soon",
     "newsTitle": "Latest News",
     "newsBody": "Release announcements, product updates, media coverage, and notes from RINRO.",
+    "newsMore": "See all news",
     "contactTitle": "Contact",
     "contactBody": "For inquiries, please reach us by email or through X."
   },
@@ -84,6 +85,8 @@
     "copyright": "© 2026 RINRO. All rights reserved."
   },
   "news": {
-    "error": "News could not be loaded."
+    "error": "News could not be loaded.",
+    "pageTitle": "News",
+    "pageLead": "Release announcements, product updates, media coverage, and notes from RINRO."
   }
 }
