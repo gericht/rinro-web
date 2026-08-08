@@ -421,6 +421,11 @@ h2 {
   padding: 96px 0 72px;
 }
 
+.page-hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 1;
+}
+
 .article {
   max-width: 760px;
   margin: 0 auto;
