@@ -100,6 +100,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     button.addEventListener("click", () => setLanguage(button.dataset.langButton));
   });
 
+  document.querySelectorAll("[data-back-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const referrer = document.referrer && new URL(document.referrer);
+      const cameFromSite = referrer && referrer.origin === location.origin && document.referrer !== location.href;
+      if (cameFromSite && history.length > 1) {
+        event.preventDefault();
+        history.back();
+      }
+    });
+  });
+
   try {
     await setLanguage(getStoredLanguage());
   } catch (error) {
