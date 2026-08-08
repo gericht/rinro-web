@@ -72,10 +72,9 @@ async function renderNews() {
     const response = await fetch(sitePath("/news.json"));
     if (!response.ok) throw new Error("Unable to load news");
     const news = await response.json();
-    const items = news
-      .slice()
-      .sort((a, b) => b.date.localeCompare(a.date))
-      .slice(0, Number(container.dataset.newsLimit || 3));
+    const sorted = news.slice().sort((a, b) => b.date.localeCompare(a.date));
+    const limit = container.dataset.newsLimit ? Number(container.dataset.newsLimit) : sorted.length;
+    const items = sorted.slice(0, limit);
 
     container.innerHTML = items
       .map((item) => {
@@ -99,6 +98,19 @@ async function renderNews() {
 document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll("[data-lang-button]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.langButton));
+  });
+
+  document.querySelectorAll("[data-back-link]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const isPlainClick = event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+      if (!isPlainClick) return;
+      const referrer = document.referrer && new URL(document.referrer);
+      const cameFromSite = referrer && referrer.origin === location.origin && document.referrer !== location.href;
+      if (cameFromSite && history.length > 1) {
+        event.preventDefault();
+        history.back();
+      }
+    });
   });
 
   try {
