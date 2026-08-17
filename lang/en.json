@@ -27,7 +27,6 @@
     "yokokuDescription": "An timer app that shows the time remaining as a horizontal visual bar.",
     "appPage": "App page",
     "appStore": "App Store",
-    "appStoreSoon": "Coming soon",
     "newsTitle": "Latest News",
     "newsBody": "Release announcements, product updates, media coverage, and notes from RINRO.",
     "newsMore": "See more",
@@ -73,7 +72,13 @@
     "hinotoLaunchBody1": "Hinoto, the iOS app that supports morning planning, midday focus, and evening wrap-up in one flow, is now available on the App Store. From daily reports to reflection and time analysis, you can complete your day's planning right on your device.",
     "hinotoLaunchBody2": "See the product page for the full details. We'll keep improving the app so working people can better engage with their time and spend each day more comfortably.",
     "hinotoLaunchProductLabel": "Product page: ",
-    "hinotoLaunchStoreLabel": "App Store: "
+    "hinotoLaunchStoreLabel": "App Store: ",
+    "yokokuLaunchEyebrow": "Release",
+    "yokokuLaunchTitle": "Yokoku is now available on the App Store",
+    "yokokuLaunchBody1": "Yokoku, the iOS timer app that shows the time remaining as a horizontal visual bar, is now available on the App Store. The bar always drains from the left edge and is drawn from the same state as the numbers, so you can tell how much time is left at a glance without doing the math. It's landscape-only, designed with power efficiency as the top priority.",
+    "yokokuLaunchBody2": "See the product page for the full details. We'll keep refining the app so it can show remaining time at a glance.",
+    "yokokuLaunchProductLabel": "Product page: ",
+    "yokokuLaunchStoreLabel": "App Store: "
   },
   "notFound": {
     "title": "Page not found.",
