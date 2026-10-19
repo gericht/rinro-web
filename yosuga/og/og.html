@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Yosuga — OGP・紹介カード画像の生成</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 書き出す環境でも同じ字形になるよう、画像用には Web フォントで組む（SF Pro / SF Mono の代わり）。 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* 4枚を1ファイルで組む。export-og.mjs が各 section.card を等倍で PNG に書き出す。
+     - og-ja / og-en      … 1200x630（OGP・X カード） → ../assets/og-image(-en).png
+     - thumb-ja / thumb-en … 1400x644（RINRO トップの紹介カード） → ../../assets/apps/yosuga-thumbnail(-en).png
+     色はアプリの Theme.swift（Obsidian × Iris）と同じ。 */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #08080A; --raised: #111114; --surface: #16161A;
+    --hair: rgba(255,255,255,.07); --hair-strong: rgba(255,255,255,.13);
+    --text: #F2F2F5; --text2: #8A8A93; --text3: #7A7A83; --faint: #4A4A52;
+    --iris: #8B7CFF; --on-iris: #0A0A0A; --amber: #FFB224;
+    --sans: "Inter", "Noto Sans JP", sans-serif;
+    --mono: "JetBrains Mono", "Noto Sans JP", monospace;
+  }
+  body { background: #222; font-family: var(--sans); color: var(--text); display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px; font-feature-settings: "palt"; -webkit-font-smoothing: antialiased; }
+  body:not(.exporting) .card { zoom: .5; }
+  .card { position: relative; flex: none; overflow: hidden; background: var(--bg); display: flex; align-items: center; }
+  .card::before { content: ""; position: absolute; inset: 0; background: radial-gradient(560px 440px at 74% 46%, rgba(139,124,255,.20), transparent 70%); }
+  .og { width: 1200px; height: 630px; padding: 0 0 0 84px; }
+  .thumb { width: 1400px; height: 644px; padding: 0 0 0 150px; }
+
+  .copy { position: relative; z-index: 1; flex: 1; min-width: 0; }
+  .label { display: flex; align-items: center; gap: 14px; font-family: var(--mono); font-size: 20px; letter-spacing: .16em; color: var(--text3); text-transform: uppercase; }
+  .label img { width: 48px; height: 48px; border-radius: 11px; }
+  .diamond { display: inline-block; width: 11px; height: 11px; border-radius: 2px; background: var(--iris); transform: rotate(45deg); box-shadow: 0 0 10px rgba(139,124,255,.7); }
+  h1 { font-size: 88px; font-weight: 700; line-height: 1.16; letter-spacing: -.01em; margin-top: 34px; }
+  h1 em { font-style: normal; color: var(--iris); }
+  .sub { font-size: 27px; color: var(--text2); margin-top: 26px; line-height: 1.55; }
+  /* 紹介カードは高さ 180px に切り抜かれ、左下にアイコンが重なる。見出しまでにとどめ、説明はカードの本文に任せる */
+  .thumb h1 { font-size: 100px; }
+  .thumb .copy { margin-top: -40px; }
+
+  /* 端末：アプリのホーム（Up Next）の上半分。下端は枠の外へ切る */
+  .phone { position: relative; z-index: 1; flex: none; width: 400px; height: 820px; align-self: flex-start; margin: 72px 84px 0 0; border-radius: 60px; padding: 13px; background: linear-gradient(160deg, #2A2A30, #121215 40%, #1E1E23); box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 40px 80px rgba(0,0,0,.6); }
+  .thumb .phone { margin-right: 150px; margin-top: 76px; }
+  .screen { height: 100%; border-radius: 48px; overflow: hidden; background: var(--bg); font-size: 15px; line-height: 1.45; }
+  .status { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px 0; height: 52px; font-size: 15px; font-weight: 600; }
+  .island { width: 104px; height: 30px; border-radius: 16px; background: #000; }
+  .bat { width: 27px; height: 12px; border-radius: 3px; border: 1px solid var(--text2); position: relative; }
+  .bat::after { content: ""; position: absolute; inset: 2px 7px 2px 2px; background: var(--text); border-radius: 1px; }
+  .head { padding: 12px 22px 0; }
+  .row1 { display: flex; align-items: center; gap: 9px; }
+  .row1 b { font-size: 15.5px; font-weight: 600; }
+  .row1 .mono { margin-left: auto; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; color: var(--text3); }
+  .row2 { display: flex; align-items: flex-end; gap: 14px; margin-top: 12px; }
+  .big { font-size: 70px; font-weight: 600; letter-spacing: -3px; line-height: 1; }
+  .t1 { font-size: 14.5px; font-weight: 600; }
+  .t2 { font-family: var(--mono); font-size: 12px; color: var(--text2); }
+  .txt { padding-bottom: 7px; }
+  .ring { margin-left: auto; width: 44px; height: 44px; margin-bottom: 9px; }
+  .sec { display: flex; justify-content: space-between; padding: 18px 22px 8px; border-bottom: 1px solid var(--hair); font-family: var(--mono); font-size: 11px; letter-spacing: .16em; color: var(--text3); }
+  .r { display: grid; grid-template-columns: 24px 1fr auto; gap: 9px; padding: 13px 22px; border-bottom: 1px solid var(--hair); }
+  .n { font-family: var(--mono); font-size: 11px; color: var(--faint); padding-top: 2px; }
+  .ttl { font-weight: 600; font-size: 14.5px; line-height: 1.42; }
+  .meta { display: flex; align-items: center; gap: 7px; margin-top: 5px; font-family: var(--mono); font-size: 11px; color: var(--text3); white-space: nowrap; }
+  .meta i { width: 5px; height: 5px; border-radius: 50%; background: var(--text2); }
+  .carry { color: var(--amber); }
+  .end { font-family: var(--mono); font-size: 12px; color: var(--text3); }
+</style>
+</head>
+<body>
+
+<template id="phone-ja">
+  <div class="phone"><div class="screen">
+    <div class="status"><span>9:41</span><span class="island"></span><span class="bat"></span></div>
+    <div class="head">
+      <div class="row1"><span class="diamond"></span><b>Up Next</b><span class="mono">SAT · OCT 10</span></div>
+      <div class="row2"><span class="big">3</span><span class="txt"><span class="t1">今日の Up Next</span><br><span class="t2">済み 1 · この先 5件</span></span>
+        <svg class="ring" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="3"/><circle cx="20" cy="20" r="16" fill="none" stroke="#8B7CFF" stroke-width="3" stroke-dasharray="22 100.5" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg></div>
+    </div>
+    <div class="sec"><span>TODAY</span><span>3</span></div>
+    <div class="r"><span class="n">01</span><div><div class="ttl">デザインエンジニアという職種が、いま増えている理由</div><div class="meta"><i></i>読む<span>notes.example</span></div></div><span class="end">↗</span></div>
+    <div class="r"><span class="n">02</span><div><div class="ttl">左官職人が語る、土壁という時間のかけ方</div><div class="meta"><i></i>見る<span>kotori-films.example</span><span class="carry">2日持ち越し</span></div></div><span class="end">↗</span></div>
+    <div class="r"><span class="n">03</span><div><div class="ttl">鎌倉・長谷、海の見える古民家カフェ</div><div class="meta"><i></i>行く<span>machiaruki.example</span></div></div><span class="end">↗</span></div>
+  </div></div>
+</template>
+<template id="phone-en">
+  <div class="phone"><div class="screen">
+    <div class="status"><span>9:41</span><span class="island"></span><span class="bat"></span></div>
+    <div class="head">
+      <div class="row1"><span class="diamond"></span><b>Up Next</b><span class="mono">SAT · OCT 10</span></div>
+      <div class="row2"><span class="big">3</span><span class="txt"><span class="t1">Up Next today</span><br><span class="t2">1 done · 5 later</span></span>
+        <svg class="ring" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="3"/><circle cx="20" cy="20" r="16" fill="none" stroke="#8B7CFF" stroke-width="3" stroke-dasharray="22 100.5" stroke-linecap="round" transform="rotate(-90 20 20)"/></svg></div>
+    </div>
+    <div class="sec"><span>TODAY</span><span>3</span></div>
+    <div class="r"><span class="n">01</span><div><div class="ttl">Why design engineers are suddenly everywhere</div><div class="meta"><i></i>Read<span>notes.example</span></div></div><span class="end">↗</span></div>
+    <div class="r"><span class="n">02</span><div><div class="ttl">A plasterer on the slow craft of earthen walls</div><div class="meta"><i></i>Watch<span>kotori-films.example</span><span class="carry">+2 days</span></div></div><span class="end">↗</span></div>
+    <div class="r"><span class="n">03</span><div><div class="ttl">A seaside café in an old Kamakura house</div><div class="meta"><i></i>Visit<span>machiaruki.example</span></div></div><span class="end">↗</span></div>
+  </div></div>
+</template>
+
+<section class="card og" id="og-ja" data-phone="ja">
+  <div class="copy">
+    <p class="label"><img src="../assets/icon.png" alt="">Yosuga · for iPhone</p>
+    <h1>あとで読む、を<br><em>本当に。</em></h1>
+    <p class="sub">保存したリンクを、<br>あなたが決めた日に戻します。</p>
+  </div>
+</section>
+
+<section class="card og" id="og-en" data-phone="en">
+  <div class="copy">
+    <p class="label"><img src="../assets/icon.png" alt="">Yosuga · for iPhone</p>
+    <h1>Read later.<br><em>Actually.</em></h1>
+    <p class="sub">Saved links come back<br>on the day you pick.</p>
+  </div>
+</section>
+
+<section class="card thumb" id="thumb-ja" data-phone="ja">
+  <div class="copy">
+    <p class="label"><img src="../assets/icon.png" alt="">Yosuga · for iPhone</p>
+    <h1>あとで読む、を<br><em>本当に。</em></h1>
+  </div>
+</section>
+
+<section class="card thumb" id="thumb-en" data-phone="en">
+  <div class="copy">
+    <p class="label"><img src="../assets/icon.png" alt="">Yosuga · for iPhone</p>
+    <h1>Read later.<br><em>Actually.</em></h1>
+  </div>
+</section>
+
+<script>
+  // 端末は言語ごとに1つだけ書き、各カードへ差し込む。
+  document.querySelectorAll("[data-phone]").forEach(function (card) {
+    card.appendChild(document.getElementById("phone-" + card.dataset.phone).content.cloneNode(true));
+  });
+</script>
+</body>
+</html>
