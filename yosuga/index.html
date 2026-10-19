@@ -423,14 +423,15 @@
     footer.site .copy { margin-left: auto; font-family: var(--mono); font-size: 0.74rem; }
 
     /* ───────── 出現 ───────── */
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    /* 隠すのは出現のスクリプトが動いたときだけ（JavaScript が無効でも各節は読める） */
+    .reveal-ready .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal-ready .reveal.in { opacity: 1; transform: none; }
     .in .swipe .r { transform: translateX(-210px); }
     .swipe .r { transform: translateX(0); }
     .in .swipe .r { transition-delay: 0.5s; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .reveal-ready .reveal { opacity: 1; transform: none; transition: none; }
       .sweep::after { transform: scaleX(1); animation: none !important; }
       .swipe .r { transform: translateX(-210px); transition: none; }
     }
@@ -825,6 +826,7 @@
       if (!("IntersectionObserver" in window)) {
         reveals.forEach(function (el) { el.classList.add("in"); });
       } else {
+        document.documentElement.classList.add("reveal-ready");
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
