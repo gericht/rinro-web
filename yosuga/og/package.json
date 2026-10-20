@@ -1,0 +1,12 @@
+{
+  "name": "yosuga-og",
+  "private": true,
+  "description": "og.html から OGP とトップの紹介カード画像を書き出す",
+  "type": "module",
+  "scripts": {
+    "export": "node export-og.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}
