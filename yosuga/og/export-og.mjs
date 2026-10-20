@@ -1,7 +1,8 @@
 // og.html の各 section.card を等倍の PNG に書き出す。
 // - og-ja / og-en      → ../assets/og-image.png / og-image-en.png（1200x630）
 // - thumb-ja / thumb-en → ../../assets/apps/yosuga-thumbnail.png / yosuga-thumbnail-en.png（1400x644）
-// 実行: node export-og.mjs
+// 準備: このフォルダで npm ci && npx playwright install chromium（初回のみ）
+// 実行: npm run export
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
