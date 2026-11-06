@@ -118,15 +118,18 @@
   .step p { margin: 0 0 36px; color: var(--sub); font-size: 15px; }
   .shot { margin-top: auto; height: 340px; overflow: hidden; border-radius: 16px 16px 0 0; border: 1px solid #e1e0db; border-bottom: 0; background: #f2f3f5; }
 
-  .rows { border-top: 1px solid var(--line); }
-  .row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 64px; padding: 40px 0; border-bottom: 1px solid var(--line); }
-  .row h3 { margin: 0; font-size: 21px; font-weight: 400; line-height: 1.55; }
-  .row p { margin: 0; color: var(--sub); }
 
-  .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 80px; }
-  .pair figure { margin: 0; background: var(--panel); border-radius: 20px; padding: 36px 0 0; overflow: hidden; height: 540px; display: flex; flex-direction: column; align-items: center; }
-  .pair figcaption { font-size: 14px; color: var(--sub); margin-bottom: 28px; }
-  .pair .phone { width: min(340px, 82%); border-radius: 36px 36px 0 0; border-bottom: 0; box-shadow: 0 30px 60px -30px rgba(15, 16, 18, .25); }
+
+  .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .tile { margin: 0; background: var(--panel); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+  .tile figcaption { padding: 32px 32px 28px; }
+  .tile h3 { margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.5; }
+  .tile p { margin: 0; color: var(--sub); font-size: 15px; line-height: 1.75; }
+  .tile-shot { margin-top: auto; height: 300px; overflow: hidden; padding: 0 28px; }
+  .tile-shot img { border-radius: 14px 14px 0 0; border: 1px solid #e1e0db; border-bottom: 0; }
+  .facts { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; border-top: 1px solid var(--line); }
+  .facts li { padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--sub); font-size: 15px; }
+  .facts b { display: block; color: var(--ink); font-weight: 500; font-size: 16px; margin-bottom: 2px; }
 
   /* pricing */
   .plans { margin-top: 64px; width: 100%; border-collapse: collapse; font-size: 15px; }
@@ -162,14 +165,14 @@
     .hero-body { grid-template-columns: 1fr; gap: 0; margin-top: 48px; }
     .release { margin-bottom: 64px; }
     .hero .phone { width: 100%; max-width: 340px; margin: 0 auto -110px; }
-    .head, .row { grid-template-columns: 1fr; gap: 10px; }
+    .head { grid-template-columns: 1fr; gap: 10px; }
+    .tiles, .facts { grid-template-columns: 1fr; }
+    .tile-shot { height: 280px; }
     .head { margin-bottom: 48px; }
     .steps { grid-template-columns: 1fr; }
     .step, .step + .step { padding: 32px 0 0; border-left: 0; }
     .step + .step { border-top: 1px solid var(--rule); margin-top: 56px; }
     .shot { height: 300px; max-width: 420px; }
-    .pair { grid-template-columns: 1fr; margin-top: 56px; }
-    .pair figure { height: 480px; }
     section { padding-top: 112px; }
     .band { padding: 170px 0 0; }
     footer { margin-top: 112px; }
@@ -186,8 +189,7 @@
     .plans thead th b { font-size: 15px; }
     .plans tr.total th, .plans tr.total td { font-size: 15px; }
     .plans .once { display: block; margin: 0; font-size: 12px; }
-    .pair figure { height: 420px; }
-    footer .copy { margin-left: 0; width: 100%; }
+      footer .copy { margin-left: 0; width: 100%; }
   }
 </style>
 </head>
@@ -226,7 +228,7 @@
           </table>
           <p class="release"><strong>iPhone・Android</strong>App Store・Google Play で公開予定です。</p>
         </div>
-        <img class="phone" src="assets/screens/session-team.webp" width="390" height="844" alt="Tanapi の棚卸画面。佐藤 167点、鈴木 60点を取り込み済みで、場所ごとの点数が並んでいる">
+        <img class="phone" src="assets/screens/summary.webp" width="390" height="844" alt="3人分を合算した集計画面。商品ごとに実数・帳簿数・差が並び、金額合計 ¥53,880">
       </div>
     </div>
   </div>
@@ -266,39 +268,26 @@
         <h2 class="kp">棚卸の日に<wbr>要ることだけ。</h2>
         <p class="jp">今の在庫管理のやり方を変える必要はありません。商品の一覧は Excel から取り込み、結果は Excel で開ける CSV で返します。</p>
       </div>
-      <div class="rows">
-        <div class="row">
-          <h3>商品の一覧は Excel から</h3>
-          <p class="jp">バーコード・商品名・原価・帳簿数などを CSV で取り込めます。どの列が何かはアプリが見分けるので、今あるファイルをそのまま使えます。</p>
-        </div>
-        <div class="row">
-          <h3>場所ごとに数える</h3>
-          <p class="jp">「店頭 棚A」「バックヤード」のように場所を分けて数えられます。場所を切り替え忘れても、あとから記録をまとめて移せます。</p>
-        </div>
-        <div class="row">
-          <h3>箱のまま数える</h3>
-          <p class="jp">「1箱 = 12個」のように入数を登録しておけば、箱の数とバラの数を入れるだけで合計になります。</p>
-        </div>
-        <div class="row">
-          <h3>圏外のバックヤードでも動く</h3>
-          <p class="jp">データはすべて端末の中に保存し、通信しません。読み取るたびにすぐ保存するので、途中でアプリが閉じても数えた分は残ります。</p>
-        </div>
-        <div class="row">
-          <h3>結果は Excel で開ける CSV に</h3>
-          <p class="jp">Shift-JIS で書き出すので、Excel で開いても文字化けしません。差がある商品だけを書き出すこともできます。</p>
-        </div>
-      </div>
-
-      <div class="pair">
-        <figure>
-          <figcaption>集計　実数・帳簿・差を商品ごとに</figcaption>
-          <img class="phone" src="assets/screens/summary.webp" width="390" height="844" alt="集計画面。商品ごとに実数、帳簿数、差が並び、金額合計 ¥53,880" loading="lazy">
+      <div class="tiles">
+        <figure class="tile">
+          <figcaption><h3>場所ごとに数える</h3><p class="jp">棚や売り場ごとに分けて数えると、場所ごとの点数が並びます。</p></figcaption>
+          <div class="tile-shot"><img src="assets/screens/locations.webp" width="780" height="773" alt="場所の一覧。店頭 棚A 111点、店頭 棚B 220点、レジ横 44点、バックヤード 43点" loading="lazy"></div>
         </figure>
-        <figure>
-          <figcaption>書き出し　Excel でそのまま開ける</figcaption>
-          <img class="phone" src="assets/screens/export.webp" width="390" height="844" alt="書き出し画面。11月_定期棚卸_20261106.csv、8行、Shift-JIS" loading="lazy">
+        <figure class="tile">
+          <figcaption><h3>箱のまま数える</h3><p class="jp">「1箱 = 12個」を登録しておけば、箱とバラの数を入れるだけで合計になります。</p></figcaption>
+          <div class="tile-shot"><img src="assets/screens/qty-sheet.webp" width="780" height="807" alt="数量の入力。4箱 × 12 + 3 = 51個" loading="lazy"></div>
+        </figure>
+        <figure class="tile">
+          <figcaption><h3>Excel で開ける CSV に</h3><p class="jp">Shift-JIS で書き出すので文字化けしません。差がある商品だけも書き出せます。</p></figcaption>
+          <div class="tile-shot"><img src="assets/screens/export-card.webp" width="780" height="790" alt="書き出し。11月_定期棚卸_20261106.csv、8行、Shift-JIS" loading="lazy"></div>
         </figure>
       </div>
+      <ul class="facts">
+        <li><b>商品の一覧は Excel から</b>どの列が何かは、アプリが見分けます。</li>
+        <li><b>圏外でも動く</b>通信せず、端末の中だけに保存します。</li>
+        <li><b>途中で閉じても大丈夫</b>読み取るたびに、すぐ保存します。</li>
+        <li><b>場所の付け替え</b>切り替え忘れた分も、あとからまとめて移せます。</li>
+      </ul>
     </div>
   </section>
 
