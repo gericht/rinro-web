@@ -25,6 +25,8 @@
     "yosugaThumbnail": "assets/apps/yosuga-thumbnail-en.png",
     "yokokuName": "Yokoku",
     "yokokuDescription": "An timer app that shows the time remaining as a horizontal visual bar.",
+    "tanapiName": "Tanapi",
+    "tanapiDescription": "A stocktaking app for iPhone and Android: each staff member scans barcodes on their own phone, and the results are combined on one device.",
     "appPage": "App page",
     "appStore": "App Store",
     "newsTitle": "Latest News",
