@@ -120,14 +120,14 @@
 
 
 
-  .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
   .tile { margin: 0; background: var(--panel); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
   .tile figcaption { padding: 32px 32px 28px; }
   .tile h3 { margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.5; }
   .tile p { margin: 0; color: var(--sub); font-size: 15px; line-height: 1.75; }
-  .tile-shot { margin-top: auto; height: 300px; overflow: hidden; padding: 0 28px; }
+  .tile-shot { margin-top: auto; height: 320px; overflow: hidden; padding: 0 40px; }
   .tile-shot img { border-radius: 14px 14px 0 0; border: 1px solid #e1e0db; border-bottom: 0; }
-  .facts { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 64px; border-top: 1px solid var(--line); }
+  .facts { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 48px; border-top: 1px solid var(--line); }
   .facts li { padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--sub); font-size: 15px; }
   .facts b { display: block; color: var(--ink); font-weight: 500; font-size: 16px; margin-bottom: 2px; }
 
@@ -167,7 +167,7 @@
     .hero .phone { width: 100%; max-width: 340px; margin: 0 auto -110px; }
     .head { grid-template-columns: 1fr; gap: 10px; }
     .tiles, .facts { grid-template-columns: 1fr; }
-    .tile-shot { height: 280px; }
+    .tile-shot { height: 280px; padding: 0 24px; }
     .head { margin-bottom: 48px; }
     .steps { grid-template-columns: 1fr; }
     .step, .step + .step { padding: 32px 0 0; border-left: 0; }
@@ -228,7 +228,7 @@
           </table>
           <p class="release"><strong>iPhone・Android</strong>App Store・Google Play で公開予定です。</p>
         </div>
-        <img class="phone" src="assets/screens/summary.webp" width="390" height="844" alt="3人分を合算した集計画面。商品ごとに実数・帳簿数・差が並び、金額合計 ¥53,880">
+        <img class="phone" src="assets/screens/summary.webp" width="390" height="848" alt="3人分を合算した集計画面。商品ごとに実数・帳簿数・差が並び、金額合計 ¥53,880">
       </div>
     </div>
   </div>
@@ -244,19 +244,19 @@
           <span class="n num">1</span>
           <h3>それぞれのスマホで数える</h3>
           <p class="jp">手伝う人は Tanapi を入れて、担当の棚のバーコードを読むだけ。無料版のままで使えます。</p>
-          <div class="shot"><img src="assets/screens/history-top.webp" width="780" height="1040" alt="スキャン履歴。時刻、商品名、場所、数えた人、数量が新しい順に並ぶ" loading="lazy"></div>
+          <div class="shot"><img src="assets/screens/history-top.webp" width="780" height="1066" alt="スキャン履歴。時刻、商品名、場所、数えた人、数量が新しい順に並ぶ" loading="lazy"></div>
         </div>
         <div class="step">
           <span class="n num">2</span>
           <h3>終わったら、まとめ役に送る</h3>
           <p class="jp">「まとめ役の端末に送る」を押して名前を入れると、ファイルができます。数え足したときは、送り直せば置き換わります。</p>
-          <div class="shot"><img src="assets/screens/team-card.webp" width="780" height="610" alt="手分けして数える。佐藤 167点、鈴木 60点が取り込み済みと表示されている" loading="lazy"></div>
+          <div class="shot"><img src="assets/screens/team-card.webp" width="780" height="494" alt="手分けして数える。佐藤 167点、鈴木 60点が取り込み済みと表示されている" loading="lazy"></div>
         </div>
         <div class="step">
           <span class="n num">3</span>
           <h3>1台にまとめて、差を見る</h3>
           <p class="jp">まとめ役の端末で取り込むと、場所ごと・商品ごとに足し合わされます。帳簿と合わない商品も、すぐにわかります。</p>
-          <div class="shot"><img src="assets/screens/summary-diff.webp" width="780" height="833" alt="集計の差異あり。マスキングテープ 63/64、一筆箋 38/40、付箋 78/80" loading="lazy"></div>
+          <div class="shot"><img src="assets/screens/summary-diff.webp" width="780" height="910" alt="集計の差異あり。マスキングテープ 63/64、一筆箋 38/40、付箋 78/80" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -270,20 +270,23 @@
       </div>
       <div class="tiles">
         <figure class="tile">
+          <figcaption><h3>商品の一覧は Excel から</h3><p class="jp">今ある CSV をそのまま取り込めます。どの列が何かは、アプリが見分けます。</p></figcaption>
+          <div class="tile-shot"><img src="assets/screens/csv-columns.webp" width="780" height="819" alt="CSV取り込みの列の指定。A列 JAN はバーコード、B列 品名は商品名、と自動で判定されている" loading="lazy"></div>
+        </figure>
+        <figure class="tile">
           <figcaption><h3>場所ごとに数える</h3><p class="jp">棚や売り場ごとに分けて数えると、場所ごとの点数が並びます。</p></figcaption>
-          <div class="tile-shot"><img src="assets/screens/locations.webp" width="780" height="773" alt="場所の一覧。店頭 棚A 111点、店頭 棚B 220点、レジ横 44点、バックヤード 43点" loading="lazy"></div>
+          <div class="tile-shot"><img src="assets/screens/locations.webp" width="780" height="702" alt="場所の一覧。店頭 棚A 111点、店頭 棚B 220点、レジ横 44点、バックヤード 43点" loading="lazy"></div>
         </figure>
         <figure class="tile">
           <figcaption><h3>箱のまま数える</h3><p class="jp">「1箱 = 12個」を登録しておけば、箱とバラの数を入れるだけで合計になります。</p></figcaption>
-          <div class="tile-shot"><img src="assets/screens/qty-sheet.webp" width="780" height="807" alt="数量の入力。4箱 × 12 + 3 = 51個" loading="lazy"></div>
+          <div class="tile-shot"><img src="assets/screens/qty-sheet.webp" width="780" height="632" alt="数量の入力。4箱 × 12 + 3 = 51個" loading="lazy"></div>
         </figure>
         <figure class="tile">
           <figcaption><h3>Excel で開ける CSV に</h3><p class="jp">Shift-JIS で書き出すので文字化けしません。差がある商品だけも書き出せます。</p></figcaption>
-          <div class="tile-shot"><img src="assets/screens/export-card.webp" width="780" height="790" alt="書き出し。11月_定期棚卸_20261106.csv、8行、Shift-JIS" loading="lazy"></div>
+          <div class="tile-shot"><img src="assets/screens/export-card.webp" width="780" height="793" alt="書き出し。11月_定期棚卸_20261106.csv、8行、Shift-JIS" loading="lazy"></div>
         </figure>
       </div>
       <ul class="facts">
-        <li><b>商品の一覧は Excel から</b>どの列が何かは、アプリが見分けます。</li>
         <li><b>圏外でも動く</b>通信せず、端末の中だけに保存します。</li>
         <li><b>途中で閉じても大丈夫</b>読み取るたびに、すぐ保存します。</li>
         <li><b>場所の付け替え</b>切り替え忘れた分も、あとからまとめて移せます。</li>
