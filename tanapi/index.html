@@ -73,6 +73,7 @@
     font-weight: 300;
     letter-spacing: -.01em;
   }
+  .price h2 { max-width: 17em; }
   .price h2 span { display: block; color: var(--faint); }
   .kp { word-break: keep-all; overflow-wrap: anywhere; }
   .lead { margin: 28px 0 0; max-width: 24em; font-size: clamp(20px, 2.5vw, 30px); line-height: 1.6; font-weight: 300; color: var(--sub); }
@@ -90,9 +91,6 @@
   .tally small { font-size: 13px; color: var(--sub); margin-left: 3px; }
   .tally tfoot th, .tally tfoot td { border-top: 1px solid var(--ink); }
   .tally tfoot td.qty { font-size: 30px; font-weight: 500; }
-  .tally tr.cost th, .tally tr.cost td { border-top: 0; padding-top: 0; }
-  .tally tr.cost th { font-size: 14px; color: var(--sub); }
-  .tally tr.cost td.qty { font-size: 17px; font-weight: 500; color: var(--blue); }
 
   .phone {
     border-radius: 44px;
@@ -222,7 +220,6 @@
             </tbody>
             <tfoot>
               <tr><th scope="row">合計</th><td class="role"></td><td class="qty">418<small>点</small></td></tr>
-              <tr class="cost"><th scope="row" class="kp">この例で<wbr>かかる費用</th><td class="role"></td><td class="qty">¥4,800（一度だけ）</td></tr>
             </tfoot>
           </table>
           <p class="release kp"><strong>iPhone・Android</strong>App Store・Google Play で<wbr>公開予定です。<wbr>無料で<wbr>ダウンロードできます。</p>
@@ -295,8 +292,8 @@
 
   <section class="price" id="price">
     <div class="wrap">
-      <h2 class="kp">無料で<wbr>始められます。<wbr><span>手分けした<wbr>結果を<wbr>集めるときだけ、<wbr>¥4,800。</span></h2>
-      <p class="price-note kp">買うのは<wbr>まとめ役の<wbr>1台だけ。<wbr>手伝う人は<wbr>何人でも<wbr>無料で、<wbr>月額料金も<wbr>かかりません。</p>
+      <h2 class="kp">無料で<wbr>始められます。<wbr><span>月額料金は、<wbr>ずっと<wbr>かかりません。</span></h2>
+      <p class="price-note kp">手分けした<wbr>結果を<wbr>1台に<wbr>集めるときだけ、<wbr>その1台で<wbr><span class="nw">Pro版（¥4,800・買い切り）</span>を<wbr>買います。<wbr>手伝う人は<wbr>何人でも<wbr>無料です。</p>
       <table class="plans">
         <thead>
           <tr>
