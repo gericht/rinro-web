@@ -52,7 +52,9 @@ th, td {
 
 th { background: rgba(128, 128, 128, 0.12); }
 
-nav.home { margin-bottom: 1.5rem; font-size: 0.9rem; }
+nav.home { margin-bottom: 2rem; }
+nav.home a { display: inline-block; }
+nav.home img { display: block; width: auto; height: 36px; }
 
 footer {
   margin-top: 3rem;
