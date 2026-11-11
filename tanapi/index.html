@@ -52,7 +52,6 @@
   a { color: inherit; }
   .wrap { max-width: calc(var(--w) + var(--gut) * 2); margin: 0 auto; padding: 0 var(--gut); }
   .num { font-variant-numeric: tabular-nums; }
-  .jp { word-break: auto-phrase; text-wrap: pretty; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
   /* header */
@@ -75,7 +74,7 @@
     letter-spacing: -.01em;
   }
   .price h2 span { color: var(--faint); }
-  .kp { word-break: keep-all; overflow-wrap: anywhere; }
+  .kp { word-break: keep-all; overflow-wrap: anywhere; text-wrap: pretty; }
   .lead { margin: 28px 0 0; max-width: 24em; font-size: clamp(20px, 2.5vw, 30px); line-height: 1.6; font-weight: 300; color: var(--sub); }
   .hero-body { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 96px; align-items: end; margin-top: 64px; }
   .hero-note { margin: 0 0 36px; max-width: 29em; color: var(--sub); }
@@ -209,11 +208,11 @@
   <div class="hero">
     <div class="wrap">
       <h1 class="kp">数え終わったら、<br>集計も<wbr>終わっている。</h1>
-      <p class="lead kp">Tanapi は、<wbr>小さなお店のための<wbr>棚卸アプリです。<wbr>スタッフそれぞれの<wbr>スマホで数えた結果が<wbr>1台に集まり、<wbr>合計と帳簿との差が<wbr>その場で出ます。</p>
+      <p class="lead kp">Tanapi&nbsp;は、<wbr>小さなお店のための<wbr>棚卸アプリです。<wbr>スタッフそれぞれの<wbr>スマホで数えた結果が<wbr>1台に集まり、<wbr>合計と帳簿との差が<wbr>その場で出ます。</p>
 
       <div class="hero-body">
         <div>
-          <p class="hero-note jp">紙の集計表を集めて足し直す作業も、Excel への打ち直しもいりません。たとえば閉店後の文具店なら、3人が自分のスマホで売り場を分けて数え、店長の1台に送るだけです。アプリを買うのは、まとめ役の店長だけです。</p>
+          <p class="hero-note kp">紙の<wbr>集計表を<wbr>集めて<wbr>足し直す<wbr>作業も、<wbr>Excel&nbsp;への<wbr>打ち直しも<wbr>いりません。<wbr>たとえば<wbr>閉店後の<wbr>文具店なら、<wbr>3人が<wbr>自分の<wbr>スマホで<wbr>売り場を<wbr>分けて<wbr>数え、<wbr>店長の<wbr>1台に<wbr>送るだけです。<wbr>アプリを<wbr>買うのは、<wbr>まとめ役の<wbr>店長だけです。</p>
           <table class="tally num">
             <caption>11月 定期棚卸</caption>
             <tbody>
@@ -237,25 +236,25 @@
     <div class="wrap">
       <div class="head">
         <h2 class="kp">数える、<wbr>送る、<wbr>まとめる。</h2>
-        <p class="jp">サーバーもアカウント登録もいりません。結果はファイルにして、いつも使っている LINE やメール、AirDrop で渡します。iPhone と Android が混ざっていても大丈夫です。</p>
+        <p class="kp">サーバーも<wbr>アカウント登録も<wbr>いりません。<wbr>結果は<wbr>ファイルに<wbr>して、<wbr>いつも<wbr>使っている LINE&nbsp;や<wbr>メール、<wbr>AirDrop&nbsp;で<wbr>渡します。<wbr>iPhone&nbsp;と Android&nbsp;が<wbr>混ざっていても<wbr>大丈夫です。</p>
       </div>
       <div class="steps">
         <div class="step">
           <span class="n num">1</span>
           <h3>それぞれのスマホで数える</h3>
-          <p class="jp">手伝う人は Tanapi を入れて、担当の棚のバーコードを読むだけ。無料版のままで使えます。</p>
+          <p class="kp">手伝う人は Tanapi&nbsp;を<wbr>入れて、<wbr>担当の<wbr>棚の<wbr>バーコードを<wbr>読むだけ。<wbr>無料版の<wbr>ままで<wbr>使えます。</p>
           <div class="shot"><img src="assets/screens/history-top.webp" width="780" height="1066" alt="スキャン履歴。時刻、商品名、場所、数えた人、数量が新しい順に並ぶ" loading="lazy"></div>
         </div>
         <div class="step">
           <span class="n num">2</span>
           <h3>終わったら、まとめ役に送る</h3>
-          <p class="jp">「まとめ役の端末に送る」を押して名前を入れると、ファイルができます。数え足したときは、送り直せば置き換わります。</p>
+          <p class="kp"><span class="nw">「まとめ役の端末に送る」を</span><wbr>押して<wbr>名前を<wbr>入れると、<wbr>ファイルが<wbr>できます。<wbr>数え足した<wbr>ときは、<wbr>送り直せば<wbr>置き換わります。</p>
           <div class="shot"><img src="assets/screens/team-card.webp" width="780" height="494" alt="手分けして数える。佐藤 167点、鈴木 60点が取り込み済みと表示されている" loading="lazy"></div>
         </div>
         <div class="step">
           <span class="n num">3</span>
           <h3>1台にまとめて、差を見る</h3>
-          <p class="jp">まとめ役の端末で取り込むと、場所ごと・商品ごとに足し合わされます。帳簿と合わない商品も、すぐにわかります。</p>
+          <p class="kp">まとめ役の<wbr>端末で<wbr>取り込むと、<wbr>場所ごと・<wbr>商品ごとに<wbr>足し合わされます。<wbr>帳簿と<wbr>合わない<wbr>商品も、<wbr>すぐに<wbr>わかります。</p>
           <div class="shot"><img src="assets/screens/summary-diff.webp" width="780" height="910" alt="集計の差異あり。マスキングテープ 63/64、一筆箋 38/40、付箋 78/80" loading="lazy"></div>
         </div>
       </div>
@@ -266,23 +265,23 @@
     <div class="wrap">
       <div class="head">
         <h2 class="kp">棚卸の日に<wbr>要ることだけ。</h2>
-        <p class="jp">今の在庫管理のやり方を変える必要はありません。商品の一覧は Excel から取り込み、結果は Excel で開ける CSV で返します。</p>
+        <p class="kp">今の<wbr>在庫管理の<wbr>やり方を<wbr>変える<wbr>必要は<wbr>ありません。<wbr>商品の<wbr>一覧は Excel&nbsp;から<wbr>取り込み、<wbr>結果は Excel&nbsp;で<wbr>開ける CSV&nbsp;で<wbr>返します。</p>
       </div>
       <div class="tiles">
         <figure class="tile">
-          <figcaption><h3>商品の一覧は Excel から</h3><p class="jp">今ある CSV をそのまま取り込めます。どの列が何かは、アプリが見分けます。</p></figcaption>
+          <figcaption><h3>商品の一覧は Excel から</h3><p class="kp">今ある CSV&nbsp;を<wbr>そのまま<wbr>取り込めます。<wbr>どの<wbr>列が<wbr>何かは、<wbr>アプリが<wbr>見分けます。</p></figcaption>
           <div class="tile-shot"><img src="assets/screens/csv-columns.webp" width="780" height="819" alt="CSV取り込みの列の指定。A列 JAN はバーコード、B列 品名は商品名、と自動で判定されている" loading="lazy"></div>
         </figure>
         <figure class="tile">
-          <figcaption><h3>場所ごとに数える</h3><p class="jp">棚や売り場ごとに分けて数えると、場所ごとの点数が並びます。</p></figcaption>
+          <figcaption><h3>場所ごとに数える</h3><p class="kp">棚や<wbr>売り場ごとに<wbr>分けて<wbr>数えると、<wbr>場所ごとの<wbr>点数が<wbr>並びます。</p></figcaption>
           <div class="tile-shot"><img src="assets/screens/locations.webp" width="780" height="702" alt="場所の一覧。店頭 棚A 111点、店頭 棚B 220点、レジ横 44点、バックヤード 43点" loading="lazy"></div>
         </figure>
         <figure class="tile">
-          <figcaption><h3>箱のまま数える</h3><p class="jp">「1箱 = 12個」を登録しておけば、箱とバラの数を入れるだけで合計になります。</p></figcaption>
+          <figcaption><h3>箱のまま数える</h3><p class="kp"><span class="nw">「1箱 = 12個」を</span><wbr>登録しておけば、<wbr>箱と<wbr>バラの<wbr>数を<wbr>入れるだけで<wbr>合計に<wbr>なります。</p></figcaption>
           <div class="tile-shot"><img src="assets/screens/qty-sheet.webp" width="780" height="632" alt="数量の入力。4箱 × 12 + 3 = 51個" loading="lazy"></div>
         </figure>
         <figure class="tile">
-          <figcaption><h3>Excel で開ける CSV に</h3><p class="jp">Shift-JIS で書き出すので文字化けしません。差がある商品だけも書き出せます。</p></figcaption>
+          <figcaption><h3>Excel で開ける CSV に</h3><p class="kp">Shift-JIS&nbsp;で<wbr>書き出すので<wbr>文字化けしません。<wbr>差がある<wbr>商品だけも<wbr>書き出せます。</p></figcaption>
           <div class="tile-shot"><img src="assets/screens/export-card.webp" width="780" height="793" alt="書き出し。11月_定期棚卸_20261106.csv、8行、Shift-JIS" loading="lazy"></div>
         </figure>
       </div>
@@ -296,7 +295,7 @@
 
   <section class="price" id="price">
     <div class="wrap">
-      <h2 class="kp">まとめ役の<wbr>1台分 ¥4,800。<wbr><span>手伝う人は、<wbr>何人でも<wbr>無料です。</span></h2>
+      <h2 class="kp">まとめ役の<wbr>1台分&nbsp;¥4,800。<wbr><span>手伝う人は、<wbr>何人でも<wbr>無料です。</span></h2>
       <p class="price-note kp">月額料金も、<wbr>スタッフの人数分の<wbr>料金もかかりません。<wbr>買い切りです。</p>
       <table class="plans">
         <thead>
@@ -315,7 +314,7 @@
           <tr class="total"><th scope="row">料金</th><td class="num">¥0</td><td class="num">¥4,800<span class="once">買い切り</span></td></tr>
         </tbody>
       </table>
-      <p class="example jp">同じ Apple ID・Google アカウントの端末なら、まとめ役を別の端末に替えても追加の支払いはいりません。</p>
+      <p class="example kp">同じ Apple ID・Google アカウントの<wbr>端末なら、<wbr>まとめ役を<wbr>別の<wbr>端末に<wbr>替えても<wbr>追加の<wbr>支払いは<wbr>いりません。</p>
     </div>
   </section>
 
@@ -326,28 +325,28 @@
       </div>
       <div class="faq">
         <details>
-          <summary class="jp">手伝う人も Pro版を買う必要がありますか？</summary>
-          <p class="jp">いりません。手伝う人は無料版のまま数えて、まとめ役に送れます。Pro版が必要なのは、結果を取り込むまとめ役の1台だけです。</p>
+          <summary class="kp"><span>手伝う人も Pro版を<wbr>買う<wbr>必要が<wbr>ありますか？</span></summary>
+          <p class="kp">いりません。<wbr>手伝う人は<wbr>無料版の<wbr>まま<wbr>数えて、<wbr>まとめ役に<wbr>送れます。<wbr>Pro版が<wbr>必要なのは、<wbr>結果を<wbr>取り込む<wbr>まとめ役の<wbr>1台だけです。</p>
         </details>
         <details>
-          <summary class="jp">手伝う人のスマホにも商品の一覧が必要ですか？</summary>
-          <p class="jp">なくても数えられます。手伝う人の画面では商品名が「未登録」と表示されますが、まとめ役の端末に取り込むと商品名が付きます。</p>
+          <summary class="kp"><span>手伝う人の<wbr>スマホにも<wbr>商品の<wbr>一覧が<wbr>必要ですか？</span></summary>
+          <p class="kp">なくても<wbr>数えられます。<wbr>手伝う人の<wbr>画面では<wbr>商品名が<wbr><span class="nw">「未登録」と</span><wbr>表示されますが、<wbr>まとめ役の<wbr>端末に<wbr>取り込むと<wbr>商品名が<wbr>付きます。</p>
         </details>
         <details>
-          <summary class="jp">同じ人が2回送ったら、二重に数えられませんか？</summary>
-          <p class="jp">数えられません。同じ端末・同じ棚卸から送り直したファイルは、前に取り込んだ分と置き換わります。人ごとに取り除くこともできます。</p>
+          <summary class="kp"><span>同じ<wbr>人が<wbr>2回送ったら、<wbr>二重に<wbr>数えられませんか？</span></summary>
+          <p class="kp">数えられません。<wbr>同じ<wbr>端末・<wbr>同じ<wbr>棚卸から<wbr>送り直した<wbr>ファイルは、<wbr>前に<wbr>取り込んだ<wbr>分と<wbr>置き換わります。<wbr>人ごとに<wbr>取り除くこともできます。</p>
         </details>
         <details>
-          <summary class="jp">バーコードが付いていない商品は？</summary>
-          <p class="jp">コードを手で入力して数えられます。店内用のコードを決めて、商品の一覧に登録しておくこともできます。</p>
+          <summary class="kp"><span>バーコードが<wbr>付いていない<wbr>商品は？</span></summary>
+          <p class="kp">コードを<wbr>手で<wbr>入力して<wbr>数えられます。<wbr>店内用の<wbr>コードを<wbr>決めて、<wbr>商品の<wbr>一覧に<wbr>登録しておくこともできます。</p>
         </details>
         <details>
-          <summary class="jp">データはどこに保存されますか？</summary>
-          <p class="jp">それぞれの端末の中だけです。外部のサーバーには送られません。機種変更のときは、設定の「バックアップを作る」から移せます。</p>
+          <summary class="kp"><span>データは<wbr>どこに<wbr>保存されますか？</span></summary>
+          <p class="kp">それぞれの<wbr>端末の<wbr>中だけです。<wbr>外部の<wbr>サーバーには<wbr>送られません。<wbr>機種変更の<wbr>ときは、<wbr>設定の<wbr><span class="nw">「バックアップを作る」から</span><wbr>移せます。</p>
         </details>
         <details>
-          <summary class="jp">1人で使うこともできますか？</summary>
-          <p class="jp">できます。商品が100件以内なら無料版でも使えます。無料版で保存できる棚卸は1件なので、終わったら書き出してから削除すると、次の棚卸を始められます。</p>
+          <summary class="kp"><span>1人で<wbr>使うこともできますか？</span></summary>
+          <p class="kp">できます。<wbr>商品が<wbr>100件以内なら<wbr>無料版でも<wbr>使えます。<wbr>無料版で<wbr>保存できる<wbr>棚卸は<wbr>1件なので、<wbr>終わったら<wbr>書き出してから<wbr>削除すると、<wbr>次の棚卸を<wbr>始められます。</p>
         </details>
       </div>
     </div>
