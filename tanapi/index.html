@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tanapi｜小さなお店の棚卸アプリ。スタッフのスマホで数えて、集計まで</title>
-<meta name="description" content="Tanapiは、小さなお店のための棚卸アプリです。スタッフそれぞれのスマホでバーコードを読むと、結果がまとめ役の1台に集まり、合計と帳簿との差がその場で出ます。料金はまとめ役の1台分¥4,800の一度だけ。月額料金も人数分の料金もかかりません。">
+<meta name="description" content="Tanapiは、小さなお店のための棚卸アプリです。スタッフそれぞれのスマホでバーコードを読むと、結果がまとめ役の1台に集まり、合計と帳簿との差がその場で出ます。無料で始められ、手分けした結果を集めるときだけ、まとめ役の1台分¥4,800（買い切り）。月額料金も人数分の料金もかかりません。">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://rinro.jp/tanapi/">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tanapi｜数え終わったら、集計も終わっている。">
-<meta property="og:description" content="小さなお店の棚卸アプリ。スタッフのスマホで数えた結果が1台に集まり、帳簿との差もその場で出ます。まとめ役の1台分¥4,800の一度だけ。">
+<meta property="og:description" content="小さなお店の棚卸アプリ。スタッフのスマホで数えた結果が1台に集まり、帳簿との差もその場で出ます。無料で始められ、手分けした結果を集めるときだけ¥4,800の買い切り。">
 <meta property="og:url" content="https://rinro.jp/tanapi/">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:image" content="https://rinro.jp/tanapi/assets/og-image.png">
@@ -73,7 +73,7 @@
     font-weight: 300;
     letter-spacing: -.01em;
   }
-  .price h2 span { color: var(--faint); }
+  .price h2 span { display: block; color: var(--faint); }
   .kp { word-break: keep-all; overflow-wrap: anywhere; }
   .lead { margin: 28px 0 0; max-width: 24em; font-size: clamp(20px, 2.5vw, 30px); line-height: 1.6; font-weight: 300; color: var(--sub); }
   .hero-body { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 96px; align-items: end; margin-top: 64px; }
@@ -222,10 +222,10 @@
             </tbody>
             <tfoot>
               <tr><th scope="row">合計</th><td class="role"></td><td class="qty">418<small>点</small></td></tr>
-              <tr class="cost"><th scope="row">かかる費用</th><td class="role"></td><td class="qty">¥4,800（一度だけ）</td></tr>
+              <tr class="cost"><th scope="row" class="kp">この例で<wbr>かかる費用</th><td class="role"></td><td class="qty">¥4,800（一度だけ）</td></tr>
             </tfoot>
           </table>
-          <p class="release"><strong>iPhone・Android</strong>App Store・Google Play で公開予定です。</p>
+          <p class="release kp"><strong>iPhone・Android</strong>App Store・Google Play で<wbr>公開予定です。<wbr>無料で<wbr>ダウンロードできます。</p>
         </div>
         <img class="phone" src="assets/screens/summary.webp" width="390" height="848" alt="3人分を合算した集計画面。商品ごとに実数・帳簿数・差が並び、金額合計 ¥53,880">
       </div>
@@ -295,14 +295,14 @@
 
   <section class="price" id="price">
     <div class="wrap">
-      <h2 class="kp">まとめ役の<wbr>1台分&nbsp;¥4,800。<wbr><span>手伝う人は、<wbr>何人でも<wbr>無料です。</span></h2>
-      <p class="price-note kp">月額料金も、<wbr>スタッフの人数分の<wbr>料金もかかりません。<wbr>買い切りです。</p>
+      <h2 class="kp">無料で<wbr>始められます。<wbr><span>手分けした<wbr>結果を<wbr>集めるときだけ、<wbr>¥4,800。</span></h2>
+      <p class="price-note kp">買うのは<wbr>まとめ役の<wbr>1台だけ。<wbr>手伝う人は<wbr>何人でも<wbr>無料で、<wbr>月額料金も<wbr>かかりません。</p>
       <table class="plans">
         <thead>
           <tr>
             <th scope="col"><span class="sr">機能</span></th>
-            <th scope="col"><b>無料版</b>手伝う人</th>
-            <th scope="col"><b>Pro版</b>まとめ役の1台</th>
+            <th scope="col" class="kp"><b>無料版</b>1人で使う・<wbr>手伝う人</th>
+            <th scope="col" class="kp"><b>Pro版</b>手分けした<wbr>結果を<wbr>集める1台</th>
           </tr>
         </thead>
         <tbody>
