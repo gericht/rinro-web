@@ -57,8 +57,8 @@
   /* header */
   .top { border-bottom: 1px solid var(--line); }
   .top .wrap { display: flex; align-items: center; height: 64px; gap: 32px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 500; font-size: 17px; }
-  .brand img { width: 28px; height: 28px; border-radius: 7px; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand img { display: block; width: auto; height: 44px; }
   .top nav { display: flex; gap: 28px; margin-left: auto; font-size: 14px; }
   .top nav a { text-decoration: none; color: var(--sub); }
   .top nav a:hover { color: var(--ink); }
@@ -195,7 +195,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="28" height="28">Tanapi</a>
+    <a class="brand" href="./"><img src="assets/tanapi-logo.svg" alt="Tanapi（タナピ）" width="97" height="44"></a>
     <nav aria-label="ページ内">
       <a href="#how">使い方</a>
       <a href="#price">料金</a>
