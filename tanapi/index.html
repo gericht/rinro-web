@@ -139,7 +139,9 @@
   .plans tr.total td:last-child { color: var(--blue); font-weight: 500; }
   .plans .once { margin-left: .6em; font-size: 14px; font-weight: 400; color: var(--sub); }
   .nw { white-space: nowrap; }
-  .price-note { margin: 28px 0 0; font-size: clamp(18px, 2vw, 24px); line-height: 1.6; font-weight: 400; max-width: 30em; }
+  .price-note { margin: 28px 0 0; font-size: clamp(18px, 2vw, 24px); line-height: 1.6; font-weight: 400; max-width: 36em; }
+  /* 2つの文を、それぞれ1かたまりにして折り返す */
+  .price-note .s { display: inline-block; }
   .example { margin: 20px 0 0; color: var(--sub); font-size: 15px; max-width: 44em; }
 
   .faq { border-top: 1px solid var(--line); }
@@ -293,7 +295,7 @@
   <section class="price" id="price">
     <div class="wrap">
       <h2 class="kp">無料で<wbr>始められます。<wbr><span>月額料金は、<wbr>ずっと<wbr>かかりません。</span></h2>
-      <p class="price-note kp">手分けした<wbr>結果を<wbr>1台に<wbr>集めるときだけ、<wbr>その1台で<wbr><span class="nw">Pro版（¥4,800・買い切り）</span>が<wbr>必要です。<wbr>手伝う人は<wbr>何人でも<wbr>無料です。</p>
+      <p class="price-note kp"><span class="s"><span class="nw">Pro版（¥4,800・買い切り）</span>が<wbr>必要なのは、<wbr>手分けした<wbr>結果を<wbr>集める1台だけ。</span><span class="s">手伝う人は<wbr>何人でも<wbr>無料です。</span></p>
       <table class="plans">
         <thead>
           <tr>
