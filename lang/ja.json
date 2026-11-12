@@ -25,6 +25,8 @@
     "yosugaThumbnail": "assets/apps/yosuga-thumbnail.png",
     "yokokuName": "Yokoku",
     "yokokuDescription": "残り時間を横方向のビジュアルバーで示す、iPhone向けのタイマーアプリケーションです。",
+    "tanapiName": "Tanapi",
+    "tanapiDescription": "スタッフそれぞれのスマホでバーコードを読んで数え、結果をまとめ役の1台に集める棚卸アプリです。iPhone・Android対応。",
     "appPage": "App page",
     "appStore": "App Store",
     "newsTitle": "Latest News",
