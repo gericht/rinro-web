@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RINRO | Indie App Studio</title>
+  <meta name="description" content="RINRO is an indie app studio crafting simple software that quietly improves everyday life.">
+  <link rel="canonical" href="https://rinro.jp/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RINRO">
+  <meta property="og:title" content="RINRO | Indie App Studio">
+  <meta property="og:description" content="Simple software, thoughtfully crafted.">
+  <meta property="og:url" content="https://rinro.jp/">
+  <meta property="og:image" content="https://rinro.jp/assets/logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@rinro_app">
+  <meta name="twitter:title" content="RINRO | Indie App Studio">
+  <meta name="twitter:description" content="Simple software, thoughtfully crafted.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RINRO",
+    "url": "https://rinro.jp/",
+    "logo": "https://rinro.jp/assets/logo.svg",
+    "founder": {"@type": "Person", "name": "高木 聖"},
+    "email": "support@rinro.jp",
+    "sameAs": ["https://x.com/rinro_app"]
+  }
+  </script>
+  <script defer src="assets/analytics.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand-link" href="index.html" aria-label="RINRO home">
+        <img class="brand-logo" src="assets/logo.svg" alt="RINRO">
+        <span>RINRO</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#apps" data-i18n="nav.apps">Apps</a>
+        <a href="#news" data-i18n="nav.news">News</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-lang-button="ja">JA</button>
+          <button type="button" data-lang-button="en">EN</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="section-inner">
+        <img class="hero-logo fade-in" src="assets/logo.svg" alt="RINRO">
+        <p class="eyebrow fade-in" data-i18n="home.studio">Indie App Studio</p>
+        <h1 class="fade-in">RINRO</h1>
+        <p class="hero-copy fade-in" data-i18n="home.tagline">Simple software, thoughtfully crafted.</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2 data-i18n="home.aboutTitle">Thoughtful software for everyday life.</h2>
+          <p class="section-lead" data-i18n="home.aboutBody">RINRO is an indie app studio creating software that quietly removes small frictions from daily life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2 data-i18n="home.appsTitle">Applications</h2>
+          <p class="section-lead" data-i18n="home.appsBody">A showcase for current and upcoming RINRO applications.</p>
+        </div>
+        <div class="app-grid" aria-label="Applications">
+          <article class="app-card">
+            <div class="app-thumb">
+              <img class="app-thumb-image" src="assets/apps/hinoto-thumbnail.png" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="app-body">
+              <div class="app-icon app-icon-image" aria-hidden="true">
+                <img src="assets/apps/hinoto-logo.png" alt="">
+              </div>
+              <h3 data-i18n="home.hinotoName">Hinoto</h3>
+              <p class="muted" data-i18n="home.hinotoDescription">朝の計画、昼の集中、夜のしめくくりを1つの流れで支援する一日管理アプリケーションです。</p>
+              <div class="button-row">
+                <a class="button primary" href="https://rinro.jp/hinoto/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
+                <a class="button" href="https://apps.apple.com/app/apple-store/id6779030137?pt=128455553&ct=Hinoto%20LP&mt=8" rel="noopener noreferrer" data-i18n="home.appStore">App Store</a>
+              </div>
+            </div>
+          </article>
+          <article class="app-card">
+            <div class="app-thumb">
+              <!-- Set the initial src from the chosen language before the parser fetches it,
+                   so a visitor only ever downloads one localized thumbnail (no wrong-language
+                   flash / double fetch). main.js keeps it in sync on later language toggles. -->
+              <img class="app-thumb-image" alt="" loading="lazy" decoding="async" data-thumb-base="assets/apps/yosuga-thumbnail" data-i18n-attr="src:home.yosugaThumbnail">
+              <script>
+                (function () {
+                  var langs = ["ja", "en"], stored = null;
+                  try { stored = localStorage.getItem("rinro-language"); } catch (e) {}
+                  var browser = (navigator.language || "").slice(0, 2);
+                  var lang = langs.indexOf(stored) > -1 ? stored : (langs.indexOf(browser) > -1 ? browser : "ja");
+                  var img = document.currentScript.previousElementSibling;
+                  img.src = img.dataset.thumbBase + (lang === "en" ? "-en" : "") + ".png";
+                })();
+              </script>
+              <noscript><img class="app-thumb-image" src="assets/apps/yosuga-thumbnail.png" alt=""></noscript>
+            </div>
+            <div class="app-body">
+              <div class="app-icon app-icon-image" aria-hidden="true">
+                <img src="assets/apps/yosuga-logo.png" alt="">
+              </div>
+              <h3 data-i18n="home.yosugaName">Yosuga</h3>
+              <p class="muted" data-i18n="home.yosugaDescription">保存したリンクを、あなたが決めた日に戻す、iPhone向けの「あとで読む」アプリケーションです。</p>
+              <div class="button-row">
+                <a class="button primary" href="https://rinro.jp/yosuga/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
+                <a class="button" href="https://apps.apple.com/app/apple-store/id6779824639?pt=128455553&ct=Yosuga%20LP&mt=8" rel="noopener noreferrer" data-i18n="home.appStore">App Store</a>
+              </div>
+            </div>
+          </article>
+          <article class="app-card">
+            <div class="app-thumb">
+              <img class="app-thumb-image" src="assets/apps/yokoku-thumbnail.png" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="app-body">
+              <div class="app-icon app-icon-image" aria-hidden="true">
+                <img src="assets/apps/yokoku-logo.png" alt="">
+              </div>
+              <h3 data-i18n="home.yokokuName">Yokoku</h3>
+              <p class="muted" data-i18n="home.yokokuDescription">残り時間を横方向のビジュアルバーで示す、タイマーアプリケーションです。</p>
+              <div class="button-row">
+                <a class="button primary" href="https://rinro.jp/yokoku/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
+                <a class="button" href="https://apps.apple.com/app/apple-store/id6798636820?pt=128455553&ct=Yokoku%20LP&mt=8" rel="noopener noreferrer" data-i18n="home.appStore">App Store</a>
+              </div>
+            </div>
+          </article>
+          <article class="app-card">
+            <div class="app-thumb">
+              <img class="app-thumb-image" src="assets/apps/tanapi-thumbnail.png" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="app-body">
+              <div class="app-icon app-icon-image" aria-hidden="true">
+                <img src="assets/apps/tanapi-logo.png" alt="">
+              </div>
+              <h3 data-i18n="home.tanapiName">Tanapi</h3>
+              <p class="muted" data-i18n="home.tanapiDescription">スタッフそれぞれのスマホでバーコードを読んで数え、結果をまとめ役の1台に集める棚卸アプリです。iPhone・Android対応。</p>
+              <div class="button-row">
+                <a class="button primary" href="https://rinro.jp/tanapi/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
+              </div>
+            </div>
+          </article>
+          <article class="app-card">
+            <div class="app-thumb">
+              <img class="app-thumb-image" src="assets/apps/porthole-thumbnail.png" alt="" loading="lazy" decoding="async">
+            </div>
+            <div class="app-body">
+              <div class="app-icon app-icon-image" aria-hidden="true">
+                <img src="assets/apps/porthole-logo.png" alt="">
+              </div>
+              <h3 data-i18n="home.portholeName">Porthole</h3>
+              <p class="muted" data-i18n="home.portholeDescription">24時間に1枚だけ、いまの自分を表すスマホの画面を、親しい友だちと見せ合うSNSです。iPhone・Android対応。</p>
+              <div class="button-row">
+                <a class="button primary" href="https://porthole.jp/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2 data-i18n="home.newsTitle">Latest News</h2>
+          <p class="section-lead" data-i18n="home.newsBody">Release announcements, product updates, media coverage, and notes from RINRO.</p>
+        </div>
+        <div class="news-list" data-news-list data-news-limit="3"></div>
+        <p class="button-row">
+          <a class="button" href="news/index.html" data-i18n="home.newsMore">See more</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2 data-i18n="home.contactTitle">Contact</h2>
+          <div>
+            <p class="section-lead" data-i18n="home.contactBody">For inquiries, please reach us by email or through X.</p>
+            <div class="contact-links button-row">
+              <a class="button primary" href="mailto:support@rinro.jp">support@rinro.jp</a>
+              <a class="button" href="https://x.com/rinro_app" rel="noopener noreferrer">X / @rinro_app</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/logo.svg" alt="RINRO">
+        <span data-i18n="common.copyright">© 2026 RINRO. All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+        <div class="language-switch" aria-label="Language">
+          <button type="button" data-lang-button="ja">JA</button>
+          <button type="button" data-lang-button="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/main.js" data-base="."></script>
+</body>
+</html>
