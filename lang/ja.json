@@ -27,6 +27,8 @@
     "yokokuDescription": "残り時間を横方向のビジュアルバーで示す、iPhone向けのタイマーアプリケーションです。",
     "tanapiName": "Tanapi",
     "tanapiDescription": "スタッフそれぞれのスマホでバーコードを読んで数え、結果をまとめ役の1台に集める棚卸アプリです。iPhone・Android対応。",
+    "portholeName": "Porthole",
+    "portholeDescription": "24時間に1枚だけ、いまの自分を表すスマホの画面を、親しい友だちと見せ合うSNSです。iPhone・Android対応。",
     "appPage": "App page",
     "appStore": "App Store",
     "newsTitle": "Latest News",
@@ -80,7 +82,14 @@
     "yokokuLaunchBody1": "残り時間を横方向のビジュアルバーで示すiPhone向けタイマーアプリ『Yokoku』を、App Storeで公開しました。バーは左端から減り、数字と同じ状態から常に描かれるため、計算せずにひと目で残り時間がわかります。横画面専用、省電力を最優先に設計しています。",
     "yokokuLaunchBody2": "アプリの詳細は製品ページをご覧ください。今後も、残り時間をひと目で伝えられるよう、機能改善に取り組んでまいります。",
     "yokokuLaunchProductLabel": "製品ページ：",
-    "yokokuLaunchStoreLabel": "App Store："
+    "yokokuLaunchStoreLabel": "App Store：",
+    "portholeLaunchEyebrow": "Release",
+    "portholeLaunchTitle": "アプリ『Porthole』をApp StoreとGoogle Playで公開しました",
+    "portholeLaunchBody1": "24時間に1枚だけ「いまの自分を表すスマホの画面」を、親しい友だちと見せ合うSNS『Porthole』を、App StoreとGoogle Playで公開しました。写真で生活を見せるのではなく、聴いている曲、見ている動画、遊んでいるゲーム、読んでいるもの —— 画面を通して、好きなものやセンスを共有します。",
+    "portholeLaunchBody2": "アプリの詳細は製品ページをご覧ください。今後も、親しい友だちと気軽に「いま」を見せ合えるよう、機能改善に取り組んでまいります。",
+    "portholeLaunchProductLabel": "製品ページ：",
+    "portholeLaunchStoreLabel": "App Store：",
+    "portholeLaunchPlayLabel": "Google Play："
   },
   "notFound": {
     "title": "Page not found.",
