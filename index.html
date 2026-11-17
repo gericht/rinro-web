@@ -158,14 +158,26 @@
           </article>
           <article class="app-card">
             <div class="app-thumb">
-              <img class="app-thumb-image" src="assets/apps/porthole-thumbnail.png" alt="" loading="lazy" decoding="async">
+              <!-- Yosuga と同じく、言語で画像を切り替える（最初に 1 枚だけ読む。切り替えは main.js） -->
+              <img class="app-thumb-image" alt="" loading="lazy" decoding="async" data-thumb-base="assets/apps/porthole-thumbnail" data-i18n-attr="src:home.portholeThumbnail">
+              <script>
+                (function () {
+                  var langs = ["ja", "en"], stored = null;
+                  try { stored = localStorage.getItem("rinro-language"); } catch (e) {}
+                  var browser = (navigator.language || "").slice(0, 2);
+                  var lang = langs.indexOf(stored) > -1 ? stored : (langs.indexOf(browser) > -1 ? browser : "ja");
+                  var img = document.currentScript.previousElementSibling;
+                  img.src = img.dataset.thumbBase + (lang === "en" ? "-en" : "") + ".png";
+                })();
+              </script>
+              <noscript><img class="app-thumb-image" src="assets/apps/porthole-thumbnail.png" alt=""></noscript>
             </div>
             <div class="app-body">
               <div class="app-icon app-icon-image" aria-hidden="true">
                 <img src="assets/apps/porthole-logo.png" alt="">
               </div>
               <h3 data-i18n="home.portholeName">Porthole</h3>
-              <p class="muted" data-i18n="home.portholeDescription">24時間に1枚だけ、いまの自分を表すスマホの画面を、親しい友だちと見せ合うSNSです。iPhone・Android対応。</p>
+              <p class="muted" data-i18n="home.portholeDescription">友だちとスクショをシェアするSNSです。スクショにラベルをつけて出すだけで、近況になります。iPhone・Android対応。</p>
               <div class="button-row">
                 <a class="button primary" href="https://porthole.jp/" rel="noopener noreferrer" data-i18n="home.appPage">App page</a>
               </div>
