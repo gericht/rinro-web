@@ -26,7 +26,7 @@
     "yokokuName": "Yokoku",
     "yokokuDescription": "残り時間を横方向のビジュアルバーで示す、iPhone向けのタイマーアプリケーションです。",
     "tanapiName": "Tanapi",
-    "tanapiDescription": "スタッフそれぞれのスマホでバーコードを読んで数え、結果をまとめ役の1台に集める棚卸アプリです。iPhone・Android対応。",
+    "tanapiDescription": "スマホでバーコードを読んで数える棚卸アプリ。数え終わった時点で、合計と帳簿との差が出ます。iPhone・Android対応。",
     "portholeName": "Porthole",
     "portholeDescription": "友だちとスクショをシェアするSNSです。スクショにラベルをつけて出すだけで、近況になります。iPhone・Android対応。",
     "portholeThumbnail": "assets/apps/porthole-thumbnail.png",
