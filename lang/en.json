@@ -25,6 +25,11 @@
     "yosugaThumbnail": "assets/apps/yosuga-thumbnail-en.png",
     "yokokuName": "Yokoku",
     "yokokuDescription": "An timer app that shows the time remaining as a horizontal visual bar.",
+    "tanapiName": "Tanapi",
+    "tanapiDescription": "A stocktaking app for iPhone and Android. Scan barcodes with your phone, and the totals and differences from your records are ready when you finish counting.",
+    "portholeName": "Porthole",
+    "portholeDescription": "A social app for sharing screenshots with your friends: just post a screenshot with a label, and that’s your update. For iPhone and Android.",
+    "portholeThumbnail": "assets/apps/porthole-thumbnail-en.png",
     "appPage": "App page",
     "appStore": "App Store",
     "newsTitle": "Latest News",
@@ -78,7 +83,14 @@
     "yokokuLaunchBody1": "Yokoku, the iOS timer app that shows the time remaining as a horizontal visual bar, is now available on the App Store. The bar always drains from the left edge and is drawn from the same state as the numbers, so you can tell how much time is left at a glance without doing the math. It's landscape-only, designed with power efficiency as the top priority.",
     "yokokuLaunchBody2": "See the product page for the full details. We'll keep refining the app so it can show remaining time at a glance.",
     "yokokuLaunchProductLabel": "Product page: ",
-    "yokokuLaunchStoreLabel": "App Store: "
+    "yokokuLaunchStoreLabel": "App Store: ",
+    "portholeLaunchEyebrow": "Release",
+    "portholeLaunchTitle": "Porthole is now available on the App Store and Google Play",
+    "portholeLaunchBody1": "Porthole, a social app for sharing one screenshot every 24 hours — the phone screen that shows who you are right now — with your close friends, is now available on the App Store and Google Play. Instead of showing your life in photos, you share what you like and your taste through your screen: the song you’re listening to, the video you’re watching, the game you’re playing, what you’re reading. The app is in Japanese.",
+    "portholeLaunchBody2": "See the product page for the full details. We’ll keep refining the app so close friends can easily share what they’re into right now.",
+    "portholeLaunchProductLabel": "Product page: ",
+    "portholeLaunchStoreLabel": "App Store: ",
+    "portholeLaunchPlayLabel": "Google Play: "
   },
   "notFound": {
     "title": "Page not found.",

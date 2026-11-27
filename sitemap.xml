@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rinro.jp/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://rinro.jp/privacy.html</loc>
@@ -18,7 +18,11 @@
   </url>
   <url>
     <loc>https://rinro.jp/news/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/news/porthole-launch.html</loc>
+    <lastmod>2026-11-16</lastmod>
   </url>
   <url>
     <loc>https://rinro.jp/news/yokoku-app-store-launch.html</loc>
@@ -107,5 +111,25 @@
   <url>
     <loc>https://rinro.jp/yokoku/legal/terms-of-service/</loc>
     <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/tanapi/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/tanapi/legal/contact/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/tanapi/legal/privacy-policy/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/tanapi/legal/specified-commercial-transaction-act/</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://rinro.jp/tanapi/legal/terms-of-service/</loc>
+    <lastmod>2026-11-06</lastmod>
   </url>
 </urlset>
